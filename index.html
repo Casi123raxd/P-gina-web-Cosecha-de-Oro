@@ -15,8 +15,8 @@
   <style>
     /* ─── RESET & ROOT ─────────────────────────────────── */
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; font-size:16px; }
-    body { font-family:'Inter', sans-serif; overflow-x:hidden; background:var(--bg); color:var(--text); transition:background .4s, color .4s; }
+    html { scroll-behavior:smooth; font-size:16px; width: 100%; max-width: 100%; overflow-x: hidden; }
+    body { font-family:'Inter', sans-serif; overflow-x:hidden; width: 100%; max-width: 100%; background:var(--bg); color:var(--text); transition:background .4s, color .4s; }
     img { max-width:100%; display:block; }
     a { text-decoration:none; color:inherit; }
     button { cursor:pointer; border:none; background:none; font-family:inherit; }
@@ -59,7 +59,7 @@
     .section-label { font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); font-weight:600; display:block; margin-bottom:.6rem; }
     .section-title { font-size:clamp(2rem,5vw,3.2rem); color:var(--forest); }
     [data-theme="dark"] .section-title { color:var(--cream); }
-    .section-subtitle { font-size:1.05rem; color:var(--text-muted); line-height:1.7; max-width:600px; }
+    .section-subtitle { font-size:1.05rem; color:var(--text-muted); line-height:1.7; max-width:100%; max-width:600px; }
 
     /* ─── LAYOUT ─────────────────────────────────── */
     .container { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
@@ -200,7 +200,7 @@
     @keyframes hero-spark { 0%,100%{opacity:0;transform:translateY(100%) scale(0)} 20%,80%{opacity:.8} 50%{opacity:1;transform:translateY(30%) scale(1)} }
     .hero-content { position:relative; z-index:3; padding-top:5rem; }
     .hero-label { font-size:.75rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold-light); font-weight:600; margin-bottom:1.2rem; display:block; }
-    .hero-title { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,7vw,5rem); color:#fff; line-height:1.1; margin-bottom:1.5rem; }
+    .hero-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,8vw,5rem); color:#fff; line-height:1.1; margin-bottom:1.5rem; }
     .hero-title span { color:var(--gold-light); font-style:italic; display:block; }
     .hero-subtitle { font-size:clamp(.95rem,2vw,1.12rem); color:rgba(255,255,255,.78); line-height:1.75; max-width:520px; margin-bottom:2.5rem; }
     .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
@@ -217,9 +217,9 @@
     .featured-image img { width:100%; height:520px; object-fit:cover; transition:transform .7s cubic-bezier(0.4,0,0.2,1); }
     .featured-image:hover img { transform:scale(1.04); }
     .featured-badge { position:absolute; top:1.5rem; left:1.5rem; background:var(--gold); color:#fff; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; padding:.4rem 1rem; border-radius:50px; font-weight:600; }
-    .featured-number { position:absolute; right:-1.5rem; bottom:-1rem; font-family:'Playfair Display',serif; font-size:9rem; font-weight:900; color:rgba(198,161,91,.07); line-height:1; user-select:none; }
+    .featured-number { position:absolute; right:-1.5rem; bottom:-1rem; font-family:'Playfair Display',serif; font-size:clamp(6rem, 20vw, 9rem); font-weight:900; color:rgba(198,161,91,.07); line-height:1; user-select:none; }
     .featured-info { }
-    .featured-vol { font-size:3.5rem; font-family:'Playfair Display',serif; color:var(--gold); font-weight:700; margin-bottom:.2rem; }
+    .featured-vol { font-size:clamp(2.5rem, 8vw, 3.5rem); font-family:'Playfair Display',serif; color:var(--gold); font-weight:700; margin-bottom:.2rem; }
     .featured-price { font-size:1.05rem; color:var(--text-muted); margin-bottom:2rem; }
     .featured-price strong { color:var(--gold); font-size:2rem; font-family:'Playfair Display',serif; }
     .featured-price em { font-size:.78rem; font-style:normal; display:block; color:var(--text-muted); margin-top:.2rem; }
@@ -354,11 +354,11 @@
 
     /* ─── HISTORY ─────────────────────────────────── */
     .history-bg { position:relative; }
-    .history-text { max-width:600px; margin-bottom:4rem; }
+    .history-text { max-width:100%; max-width:600px; margin-bottom:4rem; }
     .timeline { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
     .timeline-item { position:relative; padding:2rem; border-radius:var(--radius); border:1px solid var(--border); background:var(--surface); transition:var(--transition); }
     .timeline-item:hover { border-color:var(--gold); transform:translateY(-4px); box-shadow:var(--shadow); }
-    .tl-num { font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; color:rgba(198,161,91,.15); line-height:1; margin-bottom:.5rem; }
+    .tl-num { font-family:'Playfair Display',serif; font-size:clamp(2.5rem, 8vw, 3.5rem); font-weight:900; color:rgba(198,161,91,.15); line-height:1; margin-bottom:.5rem; }
     .tl-icon { width:44px; height:44px; border-radius:50%; background:rgba(198,161,91,.12); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
     .tl-icon svg { width:20px; height:20px; color:var(--gold); }
     .tl-title { font-size:1rem; font-weight:600; margin-bottom:.4rem; }
@@ -665,6 +665,14 @@
     .blog-grid { counter-reset: blog-counter; }
     .blog-content { padding: 0; display: flex; flex-direction: column; height: 100%; z-index: 1; position: relative; }
 
+  
+    @media (max-width: 1024px) {
+      .origin-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .origin-arrow { flex-direction: row !important; justify-content: center; }
+      .origin-arrow svg { transform: rotate(90deg) !important; animation: arrow-pulse-mobile 2s ease-in-out infinite !important; }
+      @keyframes arrow-pulse-mobile { 0%,100%{transform:rotate(90deg) translateY(0)} 50%{transform:rotate(90deg) translateY(-6px)} }
+    }
+
   </style>
 </head>
 <body>
@@ -954,7 +962,7 @@
       <h2 class="section-title" style="color:var(--cream)">Desde Bolivia para el Mundo</h2>
       <p class="section-subtitle" style="color:rgba(247,243,234,.65); margin:1rem auto 0">Alemania es la mayor economía de la Unión Europea y un mercado con cultura consolidada de consumo de bebidas artesanales. El hidromiel (Met o Honigwein) forma parte de su tradición gastronómica.</p>
     </div>
-    <div class="origin-grid" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:1rem;margin-top:4rem">
+    <div class="origin-grid">
       <div class="origin-node reveal" style="text-align:center">
         <div class="on-icon" style="width:80px;height:80px;border-radius:50%;background:rgba(198,161,91,.12);border:2px solid rgba(198,161,91,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2.5rem">🍯</div>
         <h3 style="color:var(--cream);font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.3rem">Ayopaya, Cochabamba</h3>
