@@ -1,0 +1,2532 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosecha de Oro | Vino de Miel Artesanal Boliviano</title>
+  <meta name="description" content="Cosecha de Oro S.R.L. — Vino de Miel Artesanal elaborado con miel multifloral boliviana de Ayopaya, Cochabamba. Experiencia gourmet con proyección al mercado alemán.">
+  <meta name="keywords" content="vino de miel, hidromiel, met, Bolivia, artesanal, gourmet, Ayopaya, Cochabamba, exportación">
+  <meta property="og:title" content="Cosecha de Oro | Vino de Miel Artesanal">
+  <meta property="og:description" content="La esencia de la miel multifloral boliviana transformada en arte. Vino de miel artesanal con proyección internacional.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── RESET & ROOT ─────────────────────────────────── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body { font-family:'Inter', sans-serif; overflow-x:hidden; background:var(--bg); color:var(--text); transition:background .4s, color .4s; }
+    img { max-width:100%; display:block; }
+    a { text-decoration:none; color:inherit; }
+    button { cursor:pointer; border:none; background:none; font-family:inherit; }
+    ul { list-style:none; }
+    input, textarea, select { font-family:inherit; }
+
+    /* ─── CSS VARIABLES ─────────────────────────────────── */
+    :root {
+      --forest: #193C32;
+      --sage: #527A68;
+      --cream: #F7F3EA;
+      --gold: #C6A15B;
+      --gold-light: #DCC98F;
+      --white: #FFFFFF;
+      --black: #111111;
+      --bg: #F7F3EA;
+      --surface: #FFFFFF;
+      --text: #1a1a1a;
+      --text-muted: #5a5a5a;
+      --border: rgba(193,161,91,0.2);
+      --shadow: 0 4px 24px rgba(25,60,50,0.10);
+      --shadow-lg: 0 12px 48px rgba(25,60,50,0.18);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --transition: all .35s cubic-bezier(0.4,0,0.2,1);
+    }
+    [data-theme="dark"] {
+      --bg: #0D1F1A;
+      --surface: #152B23;
+      --text: #F7F3EA;
+      --text-muted: #9ab5ac;
+      --border: rgba(193,161,91,0.15);
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
+      --shadow-lg: 0 12px 48px rgba(0,0,0,0.55);
+    }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────── */
+    .serif { font-family:'Playfair Display', serif; }
+    h1,h2,h3,h4 { font-family:'Playfair Display', serif; line-height:1.2; }
+    .section-label { font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); font-weight:600; display:block; margin-bottom:.6rem; }
+    .section-title { font-size:clamp(2rem,5vw,3.2rem); color:var(--forest); }
+    [data-theme="dark"] .section-title { color:var(--cream); }
+    .section-subtitle { font-size:1.05rem; color:var(--text-muted); line-height:1.7; max-width:600px; }
+
+    /* ─── LAYOUT ─────────────────────────────────── */
+    .container { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+    .section { padding:6rem 0; }
+    .section-alt { background:var(--surface); }
+    [data-theme="dark"] .section-alt { background:var(--surface); }
+
+    /* ─── BUTTONS ─────────────────────────────────── */
+    .btn { display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 2rem; border-radius:50px; font-size:.9rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; transition:var(--transition); cursor:pointer; }
+    .btn-primary { background:var(--gold); color:#fff; box-shadow:0 4px 20px rgba(198,161,91,.35); }
+    .btn-primary:hover { background:#b08a3e; transform:translateY(-2px); box-shadow:0 8px 28px rgba(198,161,91,.45); }
+    .btn-outline { border:1.5px solid var(--gold); color:var(--gold); background:transparent; }
+    .btn-outline:hover { background:var(--gold); color:#fff; transform:translateY(-2px); }
+    .btn-dark { background:var(--forest); color:#fff; }
+    .btn-dark:hover { background:#0f2920; transform:translateY(-2px); }
+    .btn-sm { padding:.6rem 1.4rem; font-size:.8rem; }
+
+    /* ─── AGE GATE ─────────────────────────────────── */
+    #age-gate {
+      position:fixed; inset:0; z-index:9999;
+      background:var(--forest);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; text-align:center; padding:2rem;
+    }
+    #age-gate .ag-logo { width:90px; margin-bottom:1.5rem; filter:drop-shadow(0 0 20px rgba(198,161,91,.5)); }
+    #age-gate h2 { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.4rem); color:var(--cream); margin-bottom:1rem; }
+    #age-gate p { color:rgba(247,243,234,.75); font-size:.95rem; line-height:1.75; max-width:480px; margin-bottom:2.2rem; }
+    #age-gate .btn { font-size:1rem; padding:1rem 3rem; background:var(--gold); color:#fff; letter-spacing:.12em; }
+    #age-gate .btn:hover { background:#b08a3e; transform:scale(1.04); }
+    #age-gate .ag-particles { position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+    #age-gate .ag-particles span { position:absolute; width:3px; height:3px; border-radius:50%; background:var(--gold); animation:float-particle var(--dur,8s) ease-in-out infinite var(--delay,0s); opacity:0; }
+    @keyframes float-particle { 0%,100%{opacity:0;transform:translateY(100vh) scale(0)} 10%,90%{opacity:.6} 50%{opacity:1;transform:translateY(-20px) scale(1)} }
+
+    /* ─── SPLASH ─────────────────────────────────── */
+    #splash {
+      position:fixed; inset:0; z-index:9998;
+      background:radial-gradient(ellipse at center, #1e4a3a 0%, #0d1f1a 70%);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; pointer-events:none; opacity:0;
+    }
+    #splash.active { pointer-events:all; opacity:1; }
+    #splash .sp-logo { width:110px; animation:logo-appear 1.2s cubic-bezier(0.2,0,0.2,1) both; }
+    #splash .sp-name { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,5vw,2.8rem); color:var(--cream); margin-top:1.2rem; letter-spacing:.2em; animation:name-appear 1.4s .3s cubic-bezier(0.2,0,0.2,1) both; }
+    #splash .sp-tagline { font-size:.8rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-top:.6rem; animation:name-appear 1.4s .5s both; }
+    #splash .sp-glow { position:absolute; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle, rgba(198,161,91,.18) 0%, transparent 70%); animation:glow-pulse 2s ease-in-out infinite; }
+    @keyframes logo-appear { from{opacity:0;transform:scale(.6)} to{opacity:1;transform:scale(1)} }
+    @keyframes name-appear { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes glow-pulse { 0%,100%{transform:scale(1);opacity:.7} 50%{transform:scale(1.2);opacity:1} }
+    .splash-particles { position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+    .splash-particles span { position:absolute; width:2px; height:2px; border-radius:50%; background:var(--gold-light); animation:spark var(--dur,6s) ease-in-out infinite var(--delay,0s); }
+    @keyframes spark { 0%{opacity:0;transform:translateY(0) translateX(0) scale(0)} 30%{opacity:1;transform:translateY(-60px) translateX(var(--dx,20px)) scale(1)} 100%{opacity:0;transform:translateY(-140px) translateX(var(--dx2,40px)) scale(.5)} }
+
+    /* ─── NAVBAR ─────────────────────────────────── */
+    #navbar {
+      position:fixed; top:0; left:0; right:0; z-index:900;
+      padding:1.4rem 0; transition:var(--transition);
+    }
+    #navbar.scrolled {
+      background:rgba(247,243,234,.96); backdrop-filter:blur(12px);
+      padding:.9rem 0; box-shadow:0 2px 20px rgba(25,60,50,.12);
+    }
+    [data-theme="dark"] #navbar.scrolled { background:rgba(13,31,26,.96); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; gap:.7rem; }
+    .nav-logo img { width:44px; height:44px; object-fit:contain; }
+    .nav-logo-text { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:var(--cream); line-height:1.2; transition:color .3s; }
+    #navbar.scrolled .nav-logo-text { color:var(--forest); }
+    [data-theme="dark"] #navbar.scrolled .nav-logo-text { color:var(--cream); }
+    .nav-logo-sub { font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); }
+    .nav-links { display:flex; gap:2rem; align-items:center; }
+    .nav-links a { font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(247,243,234,.85); font-weight:500; transition:var(--transition); position:relative; }
+    #navbar.scrolled .nav-links a { color:var(--text); }
+    .nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:1.5px; background:var(--gold); transition:width .3s; }
+    .nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-actions { display:flex; align-items:center; gap:1rem; }
+    .nav-btn { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:rgba(247,243,234,.9); background:rgba(255,255,255,.1); transition:var(--transition); position:relative; }
+    #navbar.scrolled .nav-btn { color:var(--text); background:rgba(25,60,50,.07); }
+    .nav-btn:hover { background:var(--gold); color:#fff; transform:scale(1.08); }
+    .nav-btn svg { width:18px; height:18px; }
+    .nav-badge { position:absolute; top:-4px; right:-4px; background:var(--gold); color:#fff; font-size:.65rem; font-weight:700; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:2px solid var(--bg); }
+    .hamburger { display:none; flex-direction:column; gap:5px; width:30px; cursor:pointer; }
+    .hamburger span { display:block; height:2px; background:var(--cream); border-radius:2px; transition:var(--transition); }
+    #navbar.scrolled .hamburger span { background:var(--text); }
+    .hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+    /* Mobile Menu */
+    #mobile-menu {
+      position:fixed; inset:0; z-index:850;
+      background:var(--forest);
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem;
+      transform:translateX(100%); transition:transform .45s cubic-bezier(0.4,0,0.2,1);
+    }
+    #mobile-menu.open { transform:translateX(0); }
+    #mobile-menu a { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--cream); letter-spacing:.08em; transition:color .3s; }
+    #mobile-menu a:hover { color:var(--gold); }
+    #mobile-menu .mm-actions { display:flex; gap:1rem; margin-top:1rem; }
+
+    /* Search panel */
+    #search-panel {
+      position:fixed; top:0; left:0; right:0; z-index:800;
+      background:var(--surface); box-shadow:var(--shadow-lg);
+      padding:5rem 2rem 2rem;
+      transform:translateY(-100%); transition:transform .4s cubic-bezier(0.4,0,0.2,1);
+    }
+    #search-panel.open { transform:translateY(0); }
+    .search-inner { max-width:700px; margin:0 auto; }
+    .search-wrapper { position:relative; }
+    #search-input { width:100%; padding:1rem 3.5rem 1rem 1.5rem; border:2px solid var(--border); border-radius:50px; font-size:1.1rem; background:var(--bg); color:var(--text); outline:none; transition:border-color .3s; }
+    #search-input:focus { border-color:var(--gold); }
+    .search-clear { position:absolute; right:1rem; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; color:var(--text-muted); font-size:1.2rem; display:none; }
+    .search-results { margin-top:1.5rem; }
+    .search-count { font-size:.85rem; color:var(--text-muted); margin-bottom:1rem; }
+    .search-no-results { text-align:center; padding:2rem; color:var(--text-muted); font-family:'Playfair Display',serif; font-size:1.2rem; }
+    #close-search { position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; cursor:pointer; color:var(--text-muted); font-size:1.5rem; transition:color .3s; }
+    #close-search:hover { color:var(--gold); }
+
+    /* ─── HERO ─────────────────────────────────── */
+    #hero {
+      position:relative; min-height:100vh;
+      display:flex; align-items:center; overflow:hidden;
+    }
+    .hero-bg {
+      position:absolute; inset:0;
+      background:linear-gradient(135deg, rgba(15,35,27,.85) 0%, rgba(25,60,50,.6) 100%);
+      z-index:1;
+    }
+    .hero-img {
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; object-position:center;
+      transform:scale(1.08);
+      transition:transform 8s ease-out;
+    }
+    .hero-particles { position:absolute; inset:0; z-index:2; pointer-events:none; overflow:hidden; }
+    .hero-particles span { position:absolute; width:2px; height:2px; border-radius:50%; background:rgba(220,201,143,.7); animation:hero-spark var(--dur,12s) ease-in-out infinite var(--delay,0s); }
+    @keyframes hero-spark { 0%,100%{opacity:0;transform:translateY(100%) scale(0)} 20%,80%{opacity:.8} 50%{opacity:1;transform:translateY(30%) scale(1)} }
+    .hero-content { position:relative; z-index:3; padding-top:5rem; }
+    .hero-label { font-size:.75rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold-light); font-weight:600; margin-bottom:1.2rem; display:block; }
+    .hero-title { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,7vw,5rem); color:#fff; line-height:1.1; margin-bottom:1.5rem; }
+    .hero-title span { color:var(--gold-light); font-style:italic; display:block; }
+    .hero-subtitle { font-size:clamp(.95rem,2vw,1.12rem); color:rgba(255,255,255,.78); line-height:1.75; max-width:520px; margin-bottom:2.5rem; }
+    .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
+    .hero-scroll { position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%); z-index:3; display:flex; flex-direction:column; align-items:center; gap:.5rem; animation:scroll-bounce 2s ease-in-out infinite; }
+    .hero-scroll span { font-size:.7rem; letter-spacing:.2em; color:rgba(255,255,255,.6); text-transform:uppercase; }
+    .scroll-line { width:1.5px; height:40px; background:linear-gradient(to bottom, var(--gold), transparent); }
+    @keyframes scroll-bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* ─── FEATURED PRODUCT ─────────────────────────────────── */
+    #featured { position:relative; overflow:hidden; }
+    .featured-inner { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .featured-image-wrap { position:relative; }
+    .featured-image { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); position:relative; }
+    .featured-image img { width:100%; height:520px; object-fit:cover; transition:transform .7s cubic-bezier(0.4,0,0.2,1); }
+    .featured-image:hover img { transform:scale(1.04); }
+    .featured-badge { position:absolute; top:1.5rem; left:1.5rem; background:var(--gold); color:#fff; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; padding:.4rem 1rem; border-radius:50px; font-weight:600; }
+    .featured-number { position:absolute; right:-1.5rem; bottom:-1rem; font-family:'Playfair Display',serif; font-size:9rem; font-weight:900; color:rgba(198,161,91,.07); line-height:1; user-select:none; }
+    .featured-info { }
+    .featured-vol { font-size:3.5rem; font-family:'Playfair Display',serif; color:var(--gold); font-weight:700; margin-bottom:.2rem; }
+    .featured-price { font-size:1.05rem; color:var(--text-muted); margin-bottom:2rem; }
+    .featured-price strong { color:var(--gold); font-size:2rem; font-family:'Playfair Display',serif; }
+    .featured-price em { font-size:.78rem; font-style:normal; display:block; color:var(--text-muted); margin-top:.2rem; }
+    .featured-tags { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:2rem; }
+    .tag { display:inline-flex; align-items:center; gap:.4rem; padding:.4rem 1rem; border:1px solid var(--border); border-radius:50px; font-size:.78rem; color:var(--text-muted); background:var(--surface); transition:var(--transition); }
+    .tag:hover { border-color:var(--gold); color:var(--gold); }
+    .tag svg { width:14px; height:14px; color:var(--gold); }
+    .featured-desc { font-size:.97rem; line-height:1.75; color:var(--text-muted); margin-bottom:2rem; }
+
+    /* ─── VALUE PROPS ─────────────────────────────────── */
+    .props-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin-top:3rem; }
+    .prop-card { text-align:center; padding:2.5rem 1.5rem; border-radius:var(--radius); border:1px solid var(--border); background:var(--surface); transition:var(--transition); }
+    .prop-card:hover { transform:translateY(-6px); box-shadow:var(--shadow); border-color:var(--gold); }
+    .prop-icon { width:56px; height:56px; background:linear-gradient(135deg, rgba(198,161,91,.15), rgba(198,161,91,.05)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.2rem; transition:var(--transition); }
+    .prop-card:hover .prop-icon { background:var(--gold); }
+    .prop-icon svg { width:26px; height:26px; color:var(--gold); transition:color .3s; }
+    .prop-card:hover .prop-icon svg { color:#fff; }
+    .prop-card h3 { font-size:1.05rem; margin-bottom:.5rem; }
+    .prop-card p { font-size:.85rem; color:var(--text-muted); line-height:1.6; }
+
+    /* ─── CATALOG ─────────────────────────────────── */
+    .catalog-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:2.5rem; flex-wrap:wrap; gap:1.5rem; }
+    .catalog-filters { display:flex; gap:.6rem; flex-wrap:wrap; }
+    .filter-btn { padding:.5rem 1.2rem; border-radius:50px; font-size:.8rem; font-weight:500; letter-spacing:.06em; border:1.5px solid var(--border); color:var(--text-muted); background:transparent; transition:var(--transition); cursor:pointer; }
+    .filter-btn:hover, .filter-btn.active { border-color:var(--gold); color:var(--gold); background:rgba(198,161,91,.08); }
+    .products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .product-card { border-radius:var(--radius-lg); overflow:hidden; background:var(--surface); box-shadow:var(--shadow); transition:var(--transition); position:relative; }
+    .product-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-lg); }
+    .pc-image { position:relative; overflow:hidden; height:280px; }
+    .pc-image img { width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(0.4,0,0.2,1); }
+    .product-card:hover .pc-image img { transform:scale(1.08); }
+    .pc-overlay { position:absolute; inset:0; background:rgba(25,60,50,.5); opacity:0; transition:opacity .4s; display:flex; align-items:center; justify-content:center; gap:.8rem; }
+    .product-card:hover .pc-overlay { opacity:1; }
+    .pc-cat { position:absolute; top:1rem; left:1rem; background:rgba(25,60,50,.85); color:var(--gold-light); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; padding:.3rem .8rem; border-radius:50px; }
+    .pc-body { padding:1.5rem; }
+    .pc-name { font-family:'Playfair Display',serif; font-size:1.18rem; margin-bottom:.3rem; }
+    .pc-ml { font-size:.8rem; color:var(--text-muted); margin-bottom:.6rem; }
+    .pc-desc { font-size:.83rem; color:var(--text-muted); line-height:1.6; margin-bottom:1rem; }
+    .pc-footer { display:flex; align-items:center; justify-content:space-between; }
+    .pc-price { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--gold); font-weight:700; }
+    .pc-price small { font-family:'Inter',sans-serif; font-size:.68rem; color:var(--text-muted); display:block; font-weight:400; }
+    .catalog-empty { grid-column:1/-1; text-align:center; padding:4rem 2rem; color:var(--text-muted); }
+    .catalog-empty svg { width:48px; height:48px; color:var(--border); margin:0 auto 1rem; }
+
+    /* ─── INTEREST LIST PANEL ─────────────────────────────────── */
+    #interest-panel {
+      position:fixed; top:0; right:0; bottom:0; width:380px; max-width:100%;
+      background:var(--surface); z-index:950; box-shadow:-8px 0 40px rgba(0,0,0,.2);
+      transform:translateX(100%); transition:transform .45s cubic-bezier(0.4,0,0.2,1);
+      display:flex; flex-direction:column;
+    }
+    #interest-panel.open { transform:translateX(0); }
+    #panel-overlay { position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:940; opacity:0; pointer-events:none; transition:opacity .4s; }
+    #panel-overlay.active { opacity:1; pointer-events:all; }
+    .panel-header { padding:1.5rem; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+    .panel-header h2 { font-family:'Playfair Display',serif; font-size:1.3rem; }
+    .panel-close { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--bg); color:var(--text-muted); transition:var(--transition); cursor:pointer; }
+    .panel-close:hover { background:var(--gold); color:#fff; }
+    .panel-note { padding:.7rem 1.5rem; background:rgba(198,161,91,.1); border-bottom:1px solid var(--border); }
+    .panel-note p { font-size:.75rem; color:var(--gold); text-align:center; font-weight:500; letter-spacing:.05em; text-transform:uppercase; }
+    .panel-items { flex:1; overflow-y:auto; padding:1rem 1.5rem; }
+    .panel-empty { text-align:center; padding:3rem 1rem; color:var(--text-muted); }
+    .panel-empty svg { width:40px; height:40px; color:var(--border); margin:0 auto 1rem; }
+    .panel-item { display:grid; grid-template-columns:72px 1fr auto; gap:1rem; align-items:center; padding:1rem 0; border-bottom:1px solid var(--border); }
+    .pi-img { width:72px; height:72px; border-radius:var(--radius); object-fit:cover; }
+    .pi-name { font-size:.9rem; font-weight:600; margin-bottom:.2rem; }
+    .pi-price { font-size:.8rem; color:var(--gold); }
+    .pi-note { font-size:.68rem; color:var(--text-muted); }
+    .pi-qty { display:flex; align-items:center; gap:.5rem; margin-top:.5rem; }
+    .pi-qty-btn { width:26px; height:26px; border-radius:50%; border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:.9rem; cursor:pointer; transition:var(--transition); color:var(--text-muted); background:transparent; }
+    .pi-qty-btn:hover { border-color:var(--gold); color:var(--gold); }
+    .pi-qty span { font-size:.9rem; min-width:20px; text-align:center; }
+    .pi-delete { width:30px; height:30px; border-radius:50%; background:none; border:none; cursor:pointer; color:var(--text-muted); display:flex; align-items:center; justify-content:center; transition:var(--transition); }
+    .pi-delete:hover { color:#e74c3c; }
+    .panel-footer { padding:1.5rem; border-top:1px solid var(--border); }
+    .panel-subtotal { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; }
+    .panel-subtotal span { font-size:.85rem; color:var(--text-muted); }
+    .panel-subtotal strong { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--gold); }
+    .panel-actions { display:flex; flex-direction:column; gap:.7rem; }
+    .panel-actions .btn { width:100%; justify-content:center; }
+    .panel-clear { text-align:center; margin-top:.8rem; }
+    .panel-clear button { font-size:.75rem; color:var(--text-muted); text-decoration:underline; cursor:pointer; background:none; border:none; }
+    .panel-clear button:hover { color:#e74c3c; }
+
+    /* ─── PRODUCT MODAL ─────────────────────────────────── */
+    #product-modal, #blog-modal, #lightbox {
+      position:fixed; inset:0; z-index:1000;
+      background:rgba(0,0,0,.65); backdrop-filter:blur(4px);
+      display:flex; align-items:center; justify-content:center;
+      padding:1.5rem; opacity:0; pointer-events:none;
+      transition:opacity .35s cubic-bezier(0.4,0,0.2,1);
+    }
+    #product-modal.open, #blog-modal.open, #lightbox.open { opacity:1; pointer-events:all; }
+    .modal-box {
+      background:var(--surface); border-radius:var(--radius-lg);
+      max-width:860px; width:100%; max-height:90vh; overflow-y:auto;
+      transform:scale(.92); transition:transform .35s cubic-bezier(0.4,0,0.2,1);
+      position:relative;
+    }
+    #product-modal.open .modal-box, #blog-modal.open .modal-box { transform:scale(1); }
+    .modal-close { position:absolute; top:1rem; right:1rem; z-index:2; width:36px; height:36px; border-radius:50%; background:var(--bg); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--text-muted); font-size:1.2rem; transition:var(--transition); }
+    .modal-close:hover { background:var(--gold); color:#fff; }
+    .pm-grid { display:grid; grid-template-columns:1fr 1fr; }
+    .pm-image { height:100%; min-height:400px; }
+    .pm-image img { width:100%; height:100%; object-fit:cover; border-radius:var(--radius-lg) 0 0 var(--radius-lg); }
+    .pm-body { padding:2.5rem; }
+    .pm-cat { font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:.6rem; }
+    .pm-name { font-family:'Playfair Display',serif; font-size:1.8rem; margin-bottom:.4rem; }
+    .pm-vol { color:var(--text-muted); font-size:.9rem; margin-bottom:1.2rem; }
+    .pm-price-wrap { background:rgba(198,161,91,.08); border-radius:var(--radius); padding:1rem 1.2rem; margin-bottom:1.5rem; }
+    .pm-price-main { font-family:'Playfair Display',serif; font-size:2rem; color:var(--gold); }
+    .pm-price-note { font-size:.75rem; color:var(--text-muted); margin-top:.2rem; }
+    .pm-desc { font-size:.92rem; line-height:1.75; color:var(--text-muted); margin-bottom:1.5rem; }
+    .pm-features { display:flex; flex-direction:column; gap:.6rem; margin-bottom:1.8rem; }
+    .pm-feature { display:flex; align-items:center; gap:.7rem; font-size:.85rem; color:var(--text-muted); }
+    .pm-feature svg { width:16px; height:16px; color:var(--gold); flex-shrink:0; }
+    .pm-qty-row { display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem; }
+    .qty-ctrl { display:flex; align-items:center; gap:.6rem; border:1.5px solid var(--border); border-radius:50px; padding:.4rem .9rem; }
+    .qty-ctrl button { width:28px; height:28px; border-radius:50%; border:none; background:var(--bg); cursor:pointer; font-size:1rem; color:var(--text-muted); display:flex; align-items:center; justify-content:center; transition:var(--transition); }
+    .qty-ctrl button:hover { background:var(--gold); color:#fff; }
+    #modal-qty { font-size:1rem; min-width:24px; text-align:center; font-weight:600; }
+
+    /* ─── BLOG MODAL ─────────────────────────────────── */
+    .blog-modal-box { max-width:720px; }
+    .bm-image { width:100%; height:280px; object-fit:cover; border-radius:var(--radius-lg) var(--radius-lg) 0 0; }
+    .bm-body { padding:2rem 2.5rem; }
+    .bm-cat { font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:.5rem; }
+    .bm-title { font-family:'Playfair Display',serif; font-size:1.8rem; margin-bottom:1rem; }
+    .bm-text { font-size:.95rem; line-height:1.85; color:var(--text-muted); }
+    .bm-text p { margin-bottom:1rem; }
+    .bm-text h4 { font-family:'Playfair Display',serif; font-size:1.15rem; color:var(--text); margin:1.5rem 0 .5rem; }
+
+    /* ─── HISTORY ─────────────────────────────────── */
+    .history-bg { position:relative; }
+    .history-text { max-width:600px; margin-bottom:4rem; }
+    .timeline { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .timeline-item { position:relative; padding:2rem; border-radius:var(--radius); border:1px solid var(--border); background:var(--surface); transition:var(--transition); }
+    .timeline-item:hover { border-color:var(--gold); transform:translateY(-4px); box-shadow:var(--shadow); }
+    .tl-num { font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; color:rgba(198,161,91,.15); line-height:1; margin-bottom:.5rem; }
+    .tl-icon { width:44px; height:44px; border-radius:50%; background:rgba(198,161,91,.12); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+    .tl-icon svg { width:20px; height:20px; color:var(--gold); }
+    .tl-title { font-size:1rem; font-weight:600; margin-bottom:.4rem; }
+    .tl-desc { font-size:.83rem; color:var(--text-muted); line-height:1.6; }
+
+    /* ─── ORIGIN ─────────────────────────────────── */
+    #origin { background:var(--forest); }
+    #origin .section-title { color:var(--cream); }
+    #origin .section-label { color:var(--gold-light); }
+    .origin-grid { display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:center; gap:1rem; margin-top:4rem; }
+    .origin-node { text-align:center; }
+    .origin-node .on-icon { width:72px; height:72px; border-radius:50%; background:rgba(198,161,91,.15); border:2px solid rgba(198,161,91,.3); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem; }
+    .origin-node h3 { color:var(--cream); font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:.3rem; }
+    .origin-node p { color:rgba(247,243,234,.6); font-size:.82rem; }
+    .origin-arrow { display:flex; flex-direction:column; align-items:center; gap:.4rem; color:var(--gold); }
+    .origin-arrow svg { width:32px; height:32px; animation:arrow-pulse 2s ease-in-out infinite; }
+    .origin-arrow span { font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(247,243,234,.5); }
+    @keyframes arrow-pulse { 0%,100%{transform:translateX(0)} 50%{transform:translateX(6px)} }
+    .origin-quote { max-width:640px; margin:3rem auto 0; text-align:center; font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem; color:rgba(247,243,234,.8); line-height:1.7; border-top:1px solid rgba(198,161,91,.2); padding-top:2.5rem; }
+
+    /* ─── MISSION & VISION ─────────────────────────────────── */
+    .mv-grid { display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; margin-top:3rem; }
+    .mv-card { padding:3rem; border-radius:var(--radius-lg); border:1px solid var(--border); background:var(--surface); position:relative; overflow:hidden; transition:var(--transition); }
+    .mv-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+    .mv-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, var(--gold), var(--gold-light)); }
+    .mv-num { position:absolute; right:1.5rem; bottom:1rem; font-family:'Playfair Display',serif; font-size:7rem; font-weight:900; color:rgba(198,161,91,.05); line-height:1; }
+    .mv-icon { width:56px; height:56px; border-radius:50%; background:rgba(198,161,91,.1); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; }
+    .mv-icon svg { width:26px; height:26px; color:var(--gold); }
+    .mv-card h3 { font-family:'Playfair Display',serif; font-size:1.6rem; margin-bottom:1rem; color:var(--forest); }
+    [data-theme="dark"] .mv-card h3 { color:var(--cream); }
+    .mv-card p { font-size:.95rem; color:var(--text-muted); line-height:1.8; }
+
+    /* ─── QUALITY ─────────────────────────────────── */
+    .quality-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; margin-top:3rem; }
+    .quality-item { padding:2rem; border-radius:var(--radius); border:1px solid var(--border); background:var(--surface); transition:var(--transition); display:flex; gap:1.2rem; align-items:flex-start; }
+    .quality-item:hover { border-color:var(--gold); box-shadow:var(--shadow); }
+    .qi-icon { width:48px; height:48px; border-radius:50%; background:rgba(198,161,91,.1); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:var(--transition); }
+    .quality-item:hover .qi-icon { background:var(--gold); }
+    .qi-icon svg { width:22px; height:22px; color:var(--gold); transition:color .3s; }
+    .quality-item:hover .qi-icon svg { color:#fff; }
+    .qi-title { font-size:.95rem; font-weight:600; margin-bottom:.3rem; }
+    .qi-desc { font-size:.83rem; color:var(--text-muted); line-height:1.6; }
+
+    /* ─── SUSTAINABILITY ─────────────────────────────────── */
+    #sustainability { background:linear-gradient(135deg, var(--forest) 0%, #0f2920 100%); }
+    #sustainability .section-title { color:var(--cream); }
+    #sustainability .section-label { color:var(--gold-light); }
+    #sustainability .section-subtitle { color:rgba(247,243,234,.7); }
+    .sust-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
+    .sust-card { text-align:center; padding:2rem 1.5rem; border-radius:var(--radius); border:1px solid rgba(198,161,91,.15); background:rgba(255,255,255,.04); transition:var(--transition); }
+    .sust-card:hover { background:rgba(198,161,91,.08); border-color:rgba(198,161,91,.3); transform:translateY(-4px); }
+    .sust-icon { font-size:2.2rem; margin-bottom:1rem; }
+    .sust-card h3 { color:var(--cream); font-size:1rem; margin-bottom:.5rem; }
+    .sust-card p { color:rgba(247,243,234,.6); font-size:.82rem; line-height:1.6; }
+
+    /* ─── TASTING EXPERIENCE ─────────────────────────────────── */
+    .tasting-tabs { display:flex; gap:0; border:1.5px solid var(--border); border-radius:50px; padding:.25rem; width:fit-content; margin:2.5rem auto; }
+    .tasting-tab { padding:.65rem 1.8rem; border-radius:50px; font-size:.82rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; transition:var(--transition); color:var(--text-muted); background:transparent; border:none; }
+    .tasting-tab.active { background:var(--gold); color:#fff; box-shadow:0 2px 12px rgba(198,161,91,.35); }
+    .tasting-content { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .tasting-img { border-radius:var(--radius-lg); overflow:hidden; }
+    .tasting-img img { width:100%; height:380px; object-fit:cover; transition:transform .6s ease; }
+    .tasting-img:hover img { transform:scale(1.03); }
+    .tasting-num { font-family:'Playfair Display',serif; font-size:5rem; font-weight:900; color:rgba(198,161,91,.12); line-height:1; margin-bottom:-.8rem; }
+    .tasting-step-title { font-family:'Playfair Display',serif; font-size:1.8rem; margin-bottom:1rem; }
+    .tasting-step-desc { font-size:.95rem; color:var(--text-muted); line-height:1.8; }
+
+    /* ─── PAIRING ─────────────────────────────────── */
+    .pairing-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
+    .pairing-card { border-radius:var(--radius); overflow:hidden; background:var(--surface); box-shadow:var(--shadow); transition:var(--transition); }
+    .pairing-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .pc2-img { height:200px; overflow:hidden; }
+    .pc2-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .pairing-card:hover .pc2-img img { transform:scale(1.07); }
+    .pc2-body { padding:1.2rem; }
+    .pc2-name { font-weight:600; font-size:.95rem; margin-bottom:.3rem; }
+    .pc2-desc { font-size:.8rem; color:var(--text-muted); line-height:1.6; }
+    .pc2-editorial { font-size:.7rem; color:rgba(198,161,91,.7); font-style:italic; margin-top:.4rem; }
+
+    /* ─── GALLERY ─────────────────────────────────── */
+    .gallery-grid { columns:3; gap:1.2rem; }
+    .gallery-item { break-inside:avoid; margin-bottom:1.2rem; border-radius:var(--radius); overflow:hidden; cursor:pointer; position:relative; }
+    .gallery-item img { width:100%; display:block; transition:transform .5s cubic-bezier(0.4,0,0.2,1); }
+    .gallery-item:hover img { transform:scale(1.05); }
+    .gallery-item::after { content:'🔍'; position:absolute; inset:0; background:rgba(25,60,50,.45); display:flex; align-items:center; justify-content:center; font-size:2rem; opacity:0; transition:opacity .3s; }
+    .gallery-item:hover::after { opacity:1; }
+
+    /* Lightbox */
+    #lightbox { flex-direction:column; }
+    .lb-box { position:relative; max-width:900px; width:100%; }
+    .lb-img { width:100%; max-height:80vh; object-fit:contain; border-radius:var(--radius); }
+    .lb-nav { position:absolute; top:50%; transform:translateY(-50%); display:flex; gap:auto; width:100%; left:0; padding:0 1rem; justify-content:space-between; }
+    .lb-btn { width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,.15); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.2); color:#fff; font-size:1.4rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:var(--transition); }
+    .lb-btn:hover { background:var(--gold); border-color:var(--gold); }
+    .lb-close { position:absolute; top:-3rem; right:0; }
+    .lb-counter { color:rgba(255,255,255,.7); font-size:.82rem; text-align:center; margin-top:.8rem; }
+
+    /* ─── VIDEO ─────────────────────────────────── */
+    #video-section { background:var(--forest); }
+    #video-section .section-title { color:var(--cream); }
+    #video-section .section-label { color:var(--gold-light); }
+    .video-wrapper { position:relative; border-radius:var(--radius-lg); overflow:hidden; max-width:900px; margin:2.5rem auto 0; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+    #brand-video { width:100%; display:block; border-radius:var(--radius-lg); background:#000; max-height:540px; object-fit:cover; }
+    .video-overlay { position:absolute; inset:0; background:linear-gradient(135deg, rgba(25,60,50,.6), rgba(0,0,0,.4)); display:flex; align-items:center; justify-content:center; transition:opacity .4s; border-radius:var(--radius-lg); }
+    .video-overlay.hidden { opacity:0; pointer-events:none; }
+    .play-btn { width:72px; height:72px; border-radius:50%; background:rgba(198,161,91,.9); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:var(--transition); border:3px solid rgba(255,255,255,.3); }
+    .play-btn:hover { transform:scale(1.12); background:var(--gold); }
+    .play-btn svg { width:28px; height:28px; color:#fff; margin-left:4px; }
+
+    /* ─── INTERNATIONAL ─────────────────────────────────── */
+    .intl-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; margin-top:3rem; }
+    .intl-text .intl-item { display:flex; gap:1.2rem; margin-bottom:1.8rem; align-items:flex-start; }
+    .intl-icon { width:44px; height:44px; border-radius:50%; background:rgba(198,161,91,.1); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .intl-icon svg { width:20px; height:20px; color:var(--gold); }
+    .intl-item-title { font-weight:600; font-size:.9rem; margin-bottom:.2rem; }
+    .intl-item-desc { font-size:.83rem; color:var(--text-muted); line-height:1.6; }
+    .intl-visual { background:linear-gradient(135deg, var(--forest), #0f2920); border-radius:var(--radius-lg); padding:3rem; color:var(--cream); }
+    .intl-stat { margin-bottom:1.8rem; padding-bottom:1.8rem; border-bottom:1px solid rgba(198,161,91,.15); }
+    .intl-stat:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+    .intl-stat label { font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold-light); display:block; margin-bottom:.3rem; }
+    .intl-stat value { font-family:'Playfair Display',serif; font-size:1.4rem; }
+
+    /* ─── ACADEMIC DATA ─────────────────────────────────── */
+    #academic { background:var(--surface); border-top:3px dashed rgba(198,161,91,.3); }
+    .academic-badge { display:inline-flex; align-items:center; gap:.5rem; background:rgba(198,161,91,.12); border:1px solid rgba(198,161,91,.3); border-radius:50px; padding:.4rem 1.2rem; font-size:.75rem; color:var(--gold); font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:2rem; }
+    .academic-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+    .academic-stat { text-align:center; padding:1.8rem; border-radius:var(--radius); border:1px solid var(--border); }
+    .academic-stat .as-label { font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:.5rem; }
+    .academic-stat .as-value { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--gold); font-weight:700; }
+    .academic-disclaimer { text-align:center; margin-top:2rem; padding:1rem; background:rgba(198,161,91,.06); border-radius:var(--radius); border:1px solid rgba(198,161,91,.15); font-size:.8rem; color:var(--text-muted); font-style:italic; }
+
+    /* ─── BLOG ─────────────────────────────────── */
+    .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .blog-card { border-radius:var(--radius-lg); overflow:hidden; background:var(--surface); box-shadow:var(--shadow); transition:var(--transition); cursor:pointer; }
+    .blog-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .blog-img { height:200px; overflow:hidden; }
+    .blog-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .blog-card:hover .blog-img img { transform:scale(1.07); }
+    .blog-body { padding:1.5rem; }
+    .blog-cat-badge { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:.5rem; }
+    .blog-title { font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:.6rem; line-height:1.4; }
+    .blog-summary { font-size:.82rem; color:var(--text-muted); line-height:1.65; }
+    .blog-read { font-size:.78rem; color:var(--gold); font-weight:600; margin-top:.8rem; display:flex; align-items:center; gap:.3rem; }
+
+    /* ─── SOCIAL ─────────────────────────────────── */
+    #social { background:var(--forest); }
+    #social .section-title { color:var(--cream); }
+    #social .section-label { color:var(--gold-light); }
+    #social .section-subtitle { color:rgba(247,243,234,.7); }
+    .social-grid { display:flex; justify-content:center; gap:2rem; margin-top:3rem; flex-wrap:wrap; }
+    .social-card { display:flex; flex-direction:column; align-items:center; gap:1rem; padding:2.5rem 3rem; border-radius:var(--radius-lg); border:1px solid rgba(198,161,91,.15); background:rgba(255,255,255,.04); transition:var(--transition); text-decoration:none; }
+    .social-card:hover { background:rgba(198,161,91,.1); border-color:rgba(198,161,91,.35); transform:translateY(-5px); }
+    .social-card svg { width:36px; height:36px; color:var(--gold-light); }
+    .social-card span { color:var(--cream); font-size:.85rem; font-weight:500; }
+    .social-note { text-align:center; margin-top:1.5rem; font-size:.75rem; color:rgba(247,243,234,.4); font-style:italic; }
+
+    /* ─── CONTACT ─────────────────────────────────── */
+    .contact-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:5rem; align-items:start; }
+    .contact-info h3 { font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:1rem; }
+    .contact-info p { font-size:.9rem; color:var(--text-muted); line-height:1.75; margin-bottom:1.5rem; }
+    .contact-placeholder { display:flex; align-items:center; gap:.8rem; padding:1rem; border:1px solid var(--border); border-radius:var(--radius); margin-bottom:.8rem; }
+    .cp-icon { width:36px; height:36px; border-radius:50%; background:rgba(198,161,91,.1); display:flex; align-items:center; justify-content:center; }
+    .cp-icon svg { width:16px; height:16px; color:var(--gold); }
+    .cp-label { font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--text-muted); }
+    .cp-value { font-size:.85rem; font-style:italic; color:var(--text-muted); }
+    .contact-form { }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .form-group { margin-bottom:1.2rem; }
+    .form-group label { display:block; font-size:.8rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--text-muted); margin-bottom:.5rem; }
+    .form-group input, .form-group textarea, .form-group select { width:100%; padding:.85rem 1.2rem; border:1.5px solid var(--border); border-radius:var(--radius); background:var(--bg); color:var(--text); font-size:.9rem; outline:none; transition:border-color .3s; }
+    .form-group input:focus, .form-group textarea:focus { border-color:var(--gold); }
+    .form-group textarea { resize:vertical; min-height:130px; }
+    .form-error { font-size:.75rem; color:#e74c3c; margin-top:.3rem; display:none; }
+    .form-success { padding:1.2rem; background:rgba(82,122,104,.15); border:1px solid rgba(82,122,104,.3); border-radius:var(--radius); color:var(--sage); font-size:.9rem; font-weight:500; display:none; }
+
+    /* ─── FAQ ─────────────────────────────────── */
+    .faq-list { max-width:800px; margin:3rem auto 0; }
+    .faq-item { border-bottom:1px solid var(--border); }
+    .faq-q { width:100%; text-align:left; padding:1.4rem 0; display:flex; align-items:center; justify-content:space-between; gap:1rem; background:none; border:none; cursor:pointer; font-size:1rem; font-weight:600; color:var(--text); transition:color .3s; }
+    .faq-q:hover { color:var(--gold); }
+    .faq-arrow { width:24px; height:24px; border-radius:50%; border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:var(--transition); }
+    .faq-item.open .faq-arrow { background:var(--gold); border-color:var(--gold); transform:rotate(180deg); }
+    .faq-arrow svg { width:12px; height:12px; color:var(--text-muted); }
+    .faq-item.open .faq-arrow svg { color:#fff; }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(0.4,0,0.2,1); }
+    .faq-item.open .faq-a { max-height:300px; }
+    .faq-a p { padding:.5rem 0 1.4rem; font-size:.9rem; color:var(--text-muted); line-height:1.75; }
+
+    /* ─── TERMS ─────────────────────────────────── */
+    .terms-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+    .terms-block { padding:1.8rem; border-radius:var(--radius); border:1px solid var(--border); background:var(--surface); }
+    .terms-block h3 { font-size:1rem; font-weight:700; margin-bottom:.7rem; display:flex; align-items:center; gap:.5rem; }
+    .terms-block h3 svg { width:16px; height:16px; color:var(--gold); }
+    .terms-block p { font-size:.82rem; color:var(--text-muted); line-height:1.7; }
+
+    /* ─── FOOTER ─────────────────────────────────── */
+    #footer { background:#0a1812; color:rgba(247,243,234,.8); padding:5rem 0 2rem; }
+    .footer-grid { display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; gap:3rem; margin-bottom:4rem; }
+    .footer-brand img { width:50px; margin-bottom:1rem; }
+    .footer-brand h3 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--cream); margin-bottom:.6rem; }
+    .footer-brand p { font-size:.83rem; line-height:1.7; color:rgba(247,243,234,.55); }
+    .footer-col h4 { font-size:.78rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; }
+    .footer-col ul { display:flex; flex-direction:column; gap:.6rem; }
+    .footer-col ul li a { font-size:.83rem; color:rgba(247,243,234,.55); transition:color .3s; }
+    .footer-col ul li a:hover { color:var(--gold-light); }
+    .footer-social { display:flex; gap:.7rem; margin-top:1.5rem; }
+    .fs-icon { width:36px; height:36px; border-radius:50%; border:1px solid rgba(198,161,91,.2); display:flex; align-items:center; justify-content:center; color:rgba(247,243,234,.6); transition:var(--transition); }
+    .fs-icon:hover { background:var(--gold); border-color:var(--gold); color:#fff; }
+    .fs-icon svg { width:16px; height:16px; }
+    .footer-bottom { border-top:1px solid rgba(198,161,91,.1); padding-top:2rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+    .footer-copy { font-size:.78rem; color:rgba(247,243,234,.4); }
+    .footer-legal { display:flex; gap:1.5rem; }
+    .footer-legal a { font-size:.78rem; color:rgba(247,243,234,.4); transition:color .3s; }
+    .footer-legal a:hover { color:var(--gold); }
+    .footer-age { font-size:.72rem; color:rgba(247,243,234,.3); font-style:italic; text-align:center; margin-top:1rem; }
+
+    /* ─── TOAST ─────────────────────────────────── */
+    #toast-container { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%); z-index:2000; display:flex; flex-direction:column; gap:.6rem; align-items:center; pointer-events:none; }
+    .toast { display:inline-flex; align-items:center; gap:.7rem; padding:.8rem 1.6rem; border-radius:50px; background:var(--forest); color:var(--cream); font-size:.85rem; font-weight:500; box-shadow:0 4px 20px rgba(0,0,0,.25); animation:toast-in .35s cubic-bezier(0.4,0,0.2,1) both; }
+    .toast.success { background:var(--sage); }
+    .toast.error { background:#c0392b; }
+    .toast.gold { background:var(--gold); color:#fff; }
+    .toast.out { animation:toast-out .35s cubic-bezier(0.4,0,0.2,1) both; }
+    @keyframes toast-in { from{opacity:0;transform:translateY(20px) scale(.9)} to{opacity:1;transform:translateY(0) scale(1)} }
+    @keyframes toast-out { from{opacity:1;transform:translateY(0) scale(1)} to{opacity:0;transform:translateY(20px) scale(.9)} }
+
+    /* ─── FAB BUTTONS ─────────────────────────────────── */
+    #fab-wrap { position:fixed; right:1.5rem; bottom:2rem; display:flex; flex-direction:column; gap:.7rem; z-index:700; }
+    .fab { width:46px; height:46px; border-radius:50%; background:var(--forest); color:var(--cream); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,.25); transition:var(--transition); cursor:pointer; border:none; }
+    .fab:hover { background:var(--gold); transform:scale(1.1); }
+    .fab svg { width:20px; height:20px; }
+    #fab-top { opacity:0; pointer-events:none; }
+    #fab-top.visible { opacity:1; pointer-events:all; }
+
+    /* ─── SCROLL ANIMATIONS ─────────────────────────────────── */
+    .reveal { opacity:0; transform:translateY(32px); transition:opacity .7s cubic-bezier(0.4,0,0.2,1), transform .7s cubic-bezier(0.4,0,0.2,1); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-left { opacity:0; transform:translateX(-32px); transition:opacity .7s cubic-bezier(0.4,0,0.2,1), transform .7s cubic-bezier(0.4,0,0.2,1); }
+    .reveal-left.visible { opacity:1; transform:translateX(0); }
+    .reveal-right { opacity:0; transform:translateX(32px); transition:opacity .7s cubic-bezier(0.4,0,0.2,1), transform .7s cubic-bezier(0.4,0,0.2,1); }
+    .reveal-right.visible { opacity:1; transform:translateX(0); }
+    .reveal-scale { opacity:0; transform:scale(.92); transition:opacity .65s cubic-bezier(0.4,0,0.2,1), transform .65s cubic-bezier(0.4,0,0.2,1); }
+    .reveal-scale.visible { opacity:1; transform:scale(1); }
+    [data-delay="1"] { transition-delay:.1s; }
+    [data-delay="2"] { transition-delay:.2s; }
+    [data-delay="3"] { transition-delay:.3s; }
+    [data-delay="4"] { transition-delay:.4s; }
+    [data-delay="5"] { transition-delay:.5s; }
+
+    /* ─── REDUCED MOTION ─────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .props-grid { grid-template-columns:repeat(2,1fr); }
+      .sust-grid { grid-template-columns:repeat(2,1fr); }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+      .origin-grid { grid-template-columns:1fr; gap:1rem; }
+      .origin-arrow svg { transform:rotate(90deg); }
+      .academic-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+      .featured-inner { grid-template-columns:1fr; gap:2.5rem; }
+      .featured-image img { height:320px; }
+      .products-grid { grid-template-columns:repeat(2,1fr); }
+      .timeline { grid-template-columns:1fr; }
+      .mv-grid { grid-template-columns:1fr; }
+      .quality-grid { grid-template-columns:1fr; }
+      .pairing-grid { grid-template-columns:repeat(2,1fr); }
+      .gallery-grid { columns:2; }
+      .blog-grid { grid-template-columns:1fr; }
+      .contact-grid { grid-template-columns:1fr; gap:2rem; }
+      .tasting-content { grid-template-columns:1fr; gap:2rem; }
+      .intl-grid { grid-template-columns:1fr; gap:2.5rem; }
+      .terms-grid { grid-template-columns:1fr; }
+      .pm-grid { grid-template-columns:1fr; }
+      .pm-image img { border-radius:var(--radius-lg) var(--radius-lg) 0 0; height:250px; }
+      .form-row { grid-template-columns:1fr; }
+      #interest-panel { width:100%; bottom:0; top:auto; max-height:85vh; transform:translateY(100%); }
+      #interest-panel.open { transform:translateY(0); }
+    }
+    @media (max-width: 480px) {
+      .section { padding:4rem 0; }
+      .products-grid { grid-template-columns:1fr; }
+      .pairing-grid { grid-template-columns:1fr; }
+      .gallery-grid { columns:1; }
+      .hero-actions { flex-direction:column; }
+      .footer-grid { grid-template-columns:1fr; }
+      .tasting-tabs { flex-direction:column; border-radius:var(--radius); gap:0; }
+      .tasting-tab { border-radius:var(--radius); }
+      .social-grid { flex-direction:column; align-items:center; }
+      .props-grid { grid-template-columns:1fr; }
+      .sust-grid { grid-template-columns:1fr; }
+      .academic-grid { grid-template-columns:1fr; }
+    }
+  
+  
+    .blog-card { display: flex; flex-direction: column; padding: 2rem; justify-content: center; border-top: 2px solid var(--gold); border-radius: 0; position: relative; overflow: hidden; }
+    .blog-card::before { content: '0' counter(blog-counter); counter-increment: blog-counter; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--gold); opacity: 0.1; position: absolute; top: -1rem; right: -0.5rem; }
+    .blog-grid { counter-reset: blog-counter; }
+    .blog-content { padding: 0; display: flex; flex-direction: column; height: 100%; z-index: 1; position: relative; }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+  AGE GATE
+═══════════════════════════════════════ -->
+<div id="age-gate" role="dialog" aria-modal="true" aria-label="Verificación de edad">
+  <div class="ag-particles" aria-hidden="true"></div>
+  <svg class="ag-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="50" cy="50" r="45" stroke="#C6A15B" stroke-width="2"/>
+    <path d="M30 55 Q50 25 70 55 Q50 75 30 55Z" fill="#C6A15B" opacity=".8"/>
+    <path d="M40 52 Q50 38 60 52" stroke="#F7F3EA" stroke-width="1.5" fill="none"/>
+    <circle cx="50" cy="50" r="4" fill="#DCC98F"/>
+    <text x="50" y="82" text-anchor="middle" fill="#DCC98F" font-size="7" font-family="serif" letter-spacing="2">ORO</text>
+  </svg>
+  <h2>Cosecha de Oro</h2>
+  <p>Este sitio presenta información sobre una bebida alcohólica artesanal. El contenido está dirigido exclusivamente a personas que cumplan con la edad legal aplicable en su país de residencia.</p>
+  <button class="btn" id="age-confirm" aria-label="Confirmar mayoría de edad y continuar">CONTINUAR</button>
+</div>
+
+<!-- ═══════════════════════════════════════
+  SPLASH SCREEN
+═══════════════════════════════════════ -->
+<div id="splash" aria-hidden="true">
+  <div class="splash-particles"></div>
+  <div class="sp-glow"></div>
+  <svg class="sp-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="45" stroke="#C6A15B" stroke-width="1.5"/>
+    <path d="M30 55 Q50 25 70 55 Q50 75 30 55Z" fill="#C6A15B" opacity=".85"/>
+    <path d="M40 52 Q50 38 60 52" stroke="#F7F3EA" stroke-width="1.5" fill="none"/>
+    <circle cx="50" cy="50" r="4" fill="#DCC98F"/>
+    <text x="50" y="82" text-anchor="middle" fill="#DCC98F" font-size="7" font-family="serif" letter-spacing="2">ORO</text>
+  </svg>
+  <p class="sp-name">COSECHA DE ORO</p>
+  <p class="sp-tagline">Vino de Miel Artesanal · Bolivia</p>
+</div>
+
+<!-- ═══════════════════════════════════════
+  MOBILE MENU
+═══════════════════════════════════════ -->
+<div id="mobile-menu" role="navigation" aria-label="Menú móvil">
+
+  <a href="#catalogo" class="mm-link">Catálogo</a>
+  <a href="#nosotros" class="mm-link">Nosotros</a>
+  <a href="#historia" class="mm-link">Historia</a>
+  <a href="#experiencia" class="mm-link">Experiencia</a>
+  <a href="#blog" class="mm-link">Blog</a>
+  <a href="#contacto" class="mm-link">Contacto</a>
+  <div class="mm-actions">
+    <button class="fab" id="mm-theme" aria-label="Cambiar tema">☀</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+  SEARCH PANEL
+═══════════════════════════════════════ -->
+<div id="search-panel" role="search" aria-label="Búsqueda de productos">
+  <button id="close-search" aria-label="Cerrar búsqueda">✕</button>
+  <div class="search-inner">
+    <div class="search-wrapper">
+      <input type="search" id="search-input" placeholder="¿Qué estás buscando?" autocomplete="off" aria-label="Buscar productos">
+      <button class="search-clear" id="search-clear" aria-label="Limpiar búsqueda">✕</button>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+  NAVBAR
+═══════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo" aria-label="Cosecha de Oro - Inicio">
+        <svg width="44" height="44" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <circle cx="50" cy="50" r="45" stroke="#C6A15B" stroke-width="2"/>
+          <path d="M30 55 Q50 25 70 55 Q50 75 30 55Z" fill="#C6A15B" opacity=".85"/>
+          <path d="M40 52 Q50 38 60 52" stroke="#F7F3EA" stroke-width="1.8" fill="none"/>
+          <circle cx="50" cy="50" r="4" fill="#DCC98F"/>
+          <text x="50" y="82" text-anchor="middle" fill="#DCC98F" font-size="7" font-family="serif" letter-spacing="2">ORO</text>
+        </svg>
+        <div>
+          <div class="nav-logo-text">Cosecha de Oro</div>
+          <div class="nav-logo-sub">Vino de Miel Artesanal</div>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-btn" id="theme-toggle" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="nav-btn" id="open-search" aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="nav-btn" id="open-interest" aria-label="Ver lista de interés">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="nav-badge" id="list-counter" aria-live="polite" style="display:none">0</span>
+        </button>
+        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+  HERO
+═══════════════════════════════════════ -->
+<section id="inicio" style="scroll-margin-top:0">
+  <div id="hero">
+    <video src="arriba.mp4" autoplay muted loop playsinline preload="metadata" class="hero-img" id="hero-img" style="object-fit: cover;"></video>
+    <div class="hero-bg"></div>
+    <div class="hero-particles" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <span class="hero-label">Bolivia · Artesanal · Gourmet</span>
+      <h1 class="hero-title">EL SABOR DE BOLIVIA,<span>TRANSFORMADO EN ARTE.</span></h1>
+      <p class="hero-subtitle">Descubre la esencia de la miel multifloral boliviana a través de una experiencia artesanal, natural y única.</p>
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn btn-primary">DESCUBRIR PRODUCTO</a>
+        <a href="#historia" class="btn btn-outline" style="color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.4)">CONOCER NUESTRA HISTORIA</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  FEATURED PRODUCT
+═══════════════════════════════════════ -->
+<section id="producto" class="section section-alt" style="scroll-margin-top:70px">
+  <div class="container">
+    <div class="featured-inner">
+      <div class="featured-image-wrap reveal-left">
+        <div class="featured-image">
+          <span class="featured-badge">Producto Estrella</span>
+          <img src="vino%20alquimia%20dorada.jpeg" alt="Vino Miel Alquimia Dorada Cosecha de Oro 750ml" loading="eager">
+        </div>
+        <div class="featured-number" aria-hidden="true">750</div>
+      </div>
+      <div class="featured-info reveal-right">
+        <span class="section-label">Colección Principal</span>
+        <div class="featured-vol">750 ml</div>
+        <h2 class="section-title">Vino Miel<br><em style="font-style:italic;color:var(--gold)">Alquimia Dorada</em></h2>
+        <div class="featured-price">
+          <strong>€18,00</strong>
+          <em>Precio de referencia del proyecto · No constituye una transacción comercial</em>
+        </div>
+        <div class="featured-tags">
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Artesanal</span>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Origen Boliviano</span>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>Miel Multifloral</span>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Fermentación Controlada</span>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Gourmet</span>
+        </div>
+        <p class="featured-desc">Un bien de elevado valor agregado que combina la tradición del hidromiel (Met), los biocomponentes naturales de la miel multifloral de Ayopaya, Cochabamba, y los procesos de fermentación controlada. Cada botella representa la identidad territorial de Bolivia.</p>
+        <button class="btn btn-primary" onclick="openProductModal(products[0])">VER DETALLES</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  VALUE PROPS
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:1rem;" class="reveal">
+      <span class="section-label">Por qué elegirnos</span>
+      <h2 class="section-title">Nuestra Propuesta de Valor</h2>
+    </div>
+    <div class="props-grid">
+      <div class="prop-card reveal" data-delay="1">
+        <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Origen Natural</h3>
+        <p>Miel multifloral de los bosques de neblina de Ayopaya, Cochabamba. Identidad territorial verificada.</p>
+      </div>
+      <div class="prop-card reveal" data-delay="2">
+        <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 2l2 2m6-1a8 8 0 0 1 8 8m-9 3a4 4 0 0 0 4-4M5 21l4-4"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Elaboración Artesanal</h3>
+        <p>Fermentación controlada con levaduras enológicas profesionales, embotellado y etiquetado de alta gama.</p>
+      </div>
+      <div class="prop-card reveal" data-delay="3">
+        <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Calidad Premium</h3>
+        <p>Certificación sanitaria SENASAG, botellas de vidrio cónicas, corchos sintéticos microgranulados y cápsulas termocontraíbles de lujo.</p>
+      </div>
+      <div class="prop-card reveal" data-delay="4">
+        <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Proyección Internacional</h3>
+        <p>Estrategia de exportación e-commerce B2C hacia el mercado alemán, vía courier aéreo expreso con régimen DDP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  CATALOG
+═══════════════════════════════════════ -->
+<section id="catalogo" class="section section-alt" style="scroll-margin-top:70px">
+  <div class="container">
+    <div class="catalog-header">
+      <div class="reveal">
+        <span class="section-label">Catálogo</span>
+        <h2 class="section-title">Nuestros Productos</h2>
+      </div>
+      <div class="catalog-filters reveal">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="hidromiel">Hidromiel</button>
+        <button class="filter-btn" data-filter="750ml">750 ml</button>
+      </div>
+    </div>
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  HISTORY
+═══════════════════════════════════════ -->
+<section id="historia" class="section" style="scroll-margin-top:70px">
+  <div class="container">
+    <div class="history-text reveal">
+      <span class="section-label">Nuestra Historia</span>
+      <h2 class="section-title">De la Miel Boliviana<br>a una Experiencia Única</h2>
+      <p class="section-subtitle" style="margin-top:1rem">Cosecha de Oro S.R.L. nació con la finalidad de industrializar de forma sostenible la miel multifloral de origen boliviano y proyectarla hacia mercados de alto poder adquisitivo. En Bolivia, la apicultura y la transformación de sus derivados han experimentado un crecimiento notable, permitiendo la elaboración de productos artesanales con identidad territorial diferenciada.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal" data-delay="1">
+        <div class="tl-num">01</div>
+        <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="tl-title">Selección de Materia Prima</div>
+        <div class="tl-desc">Miel pura multifloral de los bosques de neblina de Ayopaya, Cochabamba. Levaduras enológicas y nutrientes seleccionados. 250 kg de miel por lote.</div>
+      </div>
+      <div class="timeline-item reveal" data-delay="2">
+        <div class="tl-num">02</div>
+        <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V12M12 12C12 6 6 4 3 6M12 12C12 6 18 4 21 6"/></svg></div>
+        <div class="tl-title">Preparación e Higienización</div>
+        <div class="tl-desc">Sanitización de tanques y equipos con agua purificada e insumos especializados, garantizando la inocuidad del proceso productivo.</div>
+      </div>
+      <div class="timeline-item reveal" data-delay="3">
+        <div class="tl-num">03</div>
+        <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
+        <div class="tl-title">Fermentación Controlada</div>
+        <div class="tl-desc">Mezcla de miel, agua y levaduras enológicas profesionales. Proceso de fermentación monitoreado por el Maestro Fermentador (80 horas por lote).</div>
+      </div>
+      <div class="timeline-item reveal" data-delay="4">
+        <div class="tl-num">04</div>
+        <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <div class="tl-title">Clarificación y Control de Calidad</div>
+        <div class="tl-desc">Control microbiológico por lote. Verificación de la calidad del producto conforme a los estándares del SENASAG para habilitación de exportación.</div>
+      </div>
+      <div class="timeline-item reveal" data-delay="5">
+        <div class="tl-num">05</div>
+        <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div class="tl-title">Embotellado y Etiquetado</div>
+        <div class="tl-desc">Embotellado en 500 botellas de vidrio cónico de 750ml con corchos sintéticos microgranulados, cápsulas termocontraíbles de lujo y etiquetas de alta gama.</div>
+      </div>
+      <div class="timeline-item reveal" data-delay="1">
+        <div class="tl-num">06</div>
+        <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="tl-title">Embalaje y Proyección Internacional</div>
+        <div class="tl-desc">Embalaje en 42 cajas de cartón corrugado de exportación. Despacho vía courier aéreo (DHL Express / FedEx) hacia Alemania bajo régimen DDP.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  ORIGIN
+═══════════════════════════════════════ -->
+<section id="nosotros" class="section" id="origin" style="background:var(--forest); scroll-margin-top:70px">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label" style="color:var(--gold-light)">Trayecto</span>
+      <h2 class="section-title" style="color:var(--cream)">Desde Bolivia para el Mundo</h2>
+      <p class="section-subtitle" style="color:rgba(247,243,234,.65); margin:1rem auto 0">Alemania es la mayor economía de la Unión Europea y un mercado con cultura consolidada de consumo de bebidas artesanales. El hidromiel (Met o Honigwein) forma parte de su tradición gastronómica.</p>
+    </div>
+    <div class="origin-grid" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:1rem;margin-top:4rem">
+      <div class="origin-node reveal" style="text-align:center">
+        <div class="on-icon" style="width:80px;height:80px;border-radius:50%;background:rgba(198,161,91,.12);border:2px solid rgba(198,161,91,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2.5rem">🍯</div>
+        <h3 style="color:var(--cream);font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.3rem">Ayopaya, Cochabamba</h3>
+        <p style="color:rgba(247,243,234,.55);font-size:.82rem">Origen de la miel multifloral<br>Bosques de neblina bolivianos</p>
+      </div>
+      <div class="origin-arrow reveal" style="display:flex;flex-direction:column;align-items:center;color:var(--gold)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;animation:arrow-pulse 2s ease-in-out infinite"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="origin-node reveal" data-delay="2" style="text-align:center">
+        <div class="on-icon" style="width:80px;height:80px;border-radius:50%;background:rgba(198,161,91,.12);border:2px solid rgba(198,161,91,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2.5rem">🇧🇴</div>
+        <h3 style="color:var(--cream);font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.3rem">Bolivia</h3>
+        <p style="color:rgba(247,243,234,.55);font-size:.82rem">Producción artesanal<br>Certificación SENASAG</p>
+      </div>
+      <div class="origin-arrow reveal" data-delay="3" style="display:flex;flex-direction:column;align-items:center;color:var(--gold)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:36px;height:36px;animation:arrow-pulse 2s ease-in-out infinite .4s"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span style="font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,243,234,.4);margin-top:.3rem">Aéreo · 4-7 días</span>
+      </div>
+      <div class="origin-node reveal" data-delay="4" style="text-align:center">
+        <div class="on-icon" style="width:80px;height:80px;border-radius:50%;background:rgba(198,161,91,.12);border:2px solid rgba(198,161,91,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2.5rem">🇩🇪</div>
+        <h3 style="color:var(--cream);font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.3rem">Alemania</h3>
+        <p style="color:rgba(247,243,234,.55);font-size:.82rem">Berlín · Múnich · Fráncfort<br>Entrega puerta a puerta (DDP)</p>
+      </div>
+    </div>
+    <p class="origin-quote reveal" style="max-width:640px;margin:3rem auto 0;text-align:center;font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:rgba(247,243,234,.75);line-height:1.7;border-top:1px solid rgba(198,161,91,.2);padding-top:2.5rem">"La producción de hidromiel conocida técnicamente como vino de miel representa un bien con elevado valor agregado que combina tradición, biocomponentes naturales y procesos de fermentación controlada."</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  MISSION & VISION
+═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label">Identidad</span>
+      <h2 class="section-title">Misión y Visión</h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card reveal-left">
+        <div class="mv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg></div>
+        <h3>Misión</h3>
+        <p>Industrializar de forma sostenible la miel multifloral de origen boliviano, transformándola en bebidas artesanales de alto valor agregado que combinen tradición, biocomponentes naturales y fermentación controlada, proyectándose hacia mercados internacionales de alto poder adquisitivo.</p>
+        <div class="mv-num" aria-hidden="true">M</div>
+      </div>
+      <div class="mv-card reveal-right">
+        <div class="mv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Visión</h3>
+        <p>Posicionarse como una marca boliviana de referencia en el mercado europeo de bebidas artesanales de nicho, reconocida por la calidad, la transparencia productiva, el origen territorial de Ayopaya y la sostenibilidad de sus procesos, canalizando el potencial de las PyMEs agroindustriales bolivianas hacia el mundo.</p>
+        <div class="mv-num" aria-hidden="true">V</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  QUALITY
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label">Filosofía</span>
+      <h2 class="section-title">Nuestra Calidad</h2>
+      <p class="section-subtitle" style="margin:1rem auto 0;text-align:center">Cada etapa del proceso está diseñada para preservar la pureza de la miel y garantizar una experiencia gourmet excepcional.</p>
+    </div>
+    <div class="quality-grid">
+      <div class="quality-item reveal" data-delay="1">
+        <div class="qi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="qi-title">Miel de Origen Verificado</div><div class="qi-desc">Miel pura multifloral de los bosques de neblina de Ayopaya, Cochabamba. 250 kg por lote de producción (OP-001).</div></div>
+      </div>
+      <div class="quality-item reveal" data-delay="2">
+        <div class="qi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
+        <div><div class="qi-title">Levaduras Enológicas Profesionales</div><div class="qi-desc">Fermentación controlada con levaduras y nutrientes enológicos de calidad para garantizar el perfil organoléptico del producto.</div></div>
+      </div>
+      <div class="quality-item reveal" data-delay="3">
+        <div class="qi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div><div class="qi-title">Envase Premium</div><div class="qi-desc">Botellas de vidrio cónicas de 750ml con corchos sintéticos microgranulados y cápsulas termocontraíbles de lujo.</div></div>
+      </div>
+      <div class="quality-item reveal" data-delay="4">
+        <div class="qi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="qi-title">Certificación SENASAG</div><div class="qi-desc">Certificado de inocuidad alimentaria tramitado ante el Servicio Nacional de Sanidad Agropecuaria e Inocuidad Alimentaria de Bolivia.</div></div>
+      </div>
+      <div class="quality-item reveal" data-delay="5">
+        <div class="qi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <div><div class="qi-title">Control Microbiológico por Lote</div><div class="qi-desc">Análisis de laboratorio por cada orden de producción para asegurar la calidad y el ingreso fluido al territorio aduanero europeo.</div></div>
+      </div>
+      <div class="quality-item reveal" data-delay="1">
+        <div class="qi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div><div class="qi-title">Etiquetado de Alta Gama</div><div class="qi-desc">Etiquetas y contraetiquetas diseñadas para el mercado europeo, con información transparente y presentación premium.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  SUSTAINABILITY
+═══════════════════════════════════════ -->
+<section id="sustainability" class="section" style="background:linear-gradient(135deg,var(--forest) 0%,#0f2920 100%)">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label" style="color:var(--gold-light)">Compromiso</span>
+      <h2 class="section-title" style="color:var(--cream)">Una Marca con Propósito</h2>
+      <p class="section-subtitle" style="color:rgba(247,243,234,.65);margin:1rem auto 0;text-align:center">Valorización de los productos naturales bolivianos, respeto por el origen y compromiso con la sostenibilidad.</p>
+    </div>
+    <div class="sust-grid">
+      <div class="sust-card reveal" data-delay="1">
+        <div class="sust-icon">🌿</div>
+        <h3>Origen Natural</h3>
+        <p>Miel multifloral de apicultura boliviana sostenible, cosechada en los bosques de neblina de Ayopaya.</p>
+      </div>
+      <div class="sust-card reveal" data-delay="2">
+        <div class="sust-icon">♻️</div>
+        <h3>Empaque Reciclable</h3>
+        <p>Empaque secundario 100% reciclable. Cajas de cartón corrugado diseñadas para exportación con mínimo impacto ambiental.</p>
+      </div>
+      <div class="sust-card reveal" data-delay="3">
+        <div class="sust-icon">🏔️</div>
+        <h3>Identidad Territorial</h3>
+        <p>Valorizamos la identidad territorial de Ayopaya, Cochabamba, y la tradición apícola boliviana como diferencial productivo.</p>
+      </div>
+      <div class="sust-card reveal" data-delay="4">
+        <div class="sust-icon">🚀</div>
+        <h3>PyMEs al Mundo</h3>
+        <p>Demostramos que las micro y pequeñas empresas agroindustriales bolivianas pueden proyectarse al mercado internacional con estrategia y calidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  TASTING EXPERIENCE
+═══════════════════════════════════════ -->
+<section id="experiencia" class="section section-alt" style="scroll-margin-top:70px">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label">Sensorial</span>
+      <h2 class="section-title">Descubre la Experiencia</h2>
+    </div>
+    <div class="tasting-tabs reveal" role="tablist">
+      <button class="tasting-tab active" data-tab="0" role="tab" aria-selected="true">Observar</button>
+      <button class="tasting-tab" data-tab="1" role="tab" aria-selected="false">Aromatizar</button>
+      <button class="tasting-tab" data-tab="2" role="tab" aria-selected="false">Degustar</button>
+      <button class="tasting-tab" data-tab="3" role="tab" aria-selected="false">Descubrir</button>
+    </div>
+    <div class="tasting-content" id="tasting-content">
+      <div class="tasting-img reveal-left">
+        <img id="tasting-img" src="4%20vinos.jpeg" alt="Experiencia de cata - Observar" loading="lazy">
+      </div>
+      <div class="reveal-right">
+        <div class="tasting-num" id="tasting-num" aria-hidden="true">01</div>
+        <h3 class="tasting-step-title" id="tasting-title">Observar</h3>
+        <p class="tasting-step-desc" id="tasting-desc">Contempla el color ámbar dorado del vino de miel, resultado de la miel multifloral de Ayopaya. La transparencia del líquido en la botella de vidrio cónico habla por sí sola de la clarificación cuidadosa que recibe cada lote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ═══════════════════════════════════════
+  VIDEO
+═══════════════════════════════════════ -->
+<section id="video-section" class="section">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label" style="color:var(--gold-light)">Audiovisual</span>
+      <h2 class="section-title" style="color:var(--cream)">Conoce Cosecha de Oro</h2>
+    </div>
+    <div class="video-wrapper reveal-scale">
+      <video id="brand-video" preload="metadata" playsinline poster="imagen_1.jpeg" aria-label="Video de presentación de Cosecha de Oro">
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+      <div class="video-overlay" id="video-overlay">
+        <button class="play-btn" id="play-btn" aria-label="Reproducir video">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  INTERNATIONAL
+═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Estrategia</span>
+      <h2 class="section-title">Una Visión Internacional</h2>
+      <p class="section-subtitle" style="margin-top:1rem">El proyecto plantea una estrategia de comercio electrónico B2C transfronterizo orientada al mercado alemán, con logística aérea expresa y un modelo de venta directa al consumidor final.</p>
+    </div>
+    <div class="intl-grid">
+      <div class="intl-text">
+        <div class="intl-item reveal" data-delay="1">
+          <div class="intl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div>
+            <div class="intl-item-title">E-Commerce B2C Transfronterizo</div>
+            <div class="intl-item-desc">Canal de venta directa al consumidor final en Alemania, eliminando intermediarios distribuidores y conservando el margen productivo.</div>
+          </div>
+        </div>
+        <div class="intl-item reveal" data-delay="2">
+          <div class="intl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg></div>
+          <div>
+            <div class="intl-item-title">Incoterm DDP — Delivered Duty Paid</div>
+            <div class="intl-item-desc">Cosecha de Oro asume todos los costos y riesgos del transporte hasta el domicilio del comprador en Alemania (Berlín, Múnich, Fráncfort).</div>
+          </div>
+        </div>
+        <div class="intl-item reveal" data-delay="3">
+          <div class="intl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="intl-item-title">Logística Aérea Expresa</div>
+            <div class="intl-item-desc">Envíos via DHL Express / FedEx con entrega puerta a puerta en 4 a 7 días hábiles bajo régimen de exportación definitiva por courier.</div>
+          </div>
+        </div>
+        <div class="intl-item reveal" data-delay="4">
+          <div class="intl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+          <div>
+            <div class="intl-item-title">Documentación de Exportación</div>
+            <div class="intl-item-desc">Factura comercial, Packing List, Air Waybill (AWB) y Certificado de Inocuidad SENASAG (plataforma Gran Paitití).</div>
+          </div>
+        </div>
+      </div>
+      <div class="intl-visual reveal-right" style="background:linear-gradient(135deg,var(--forest),#0f2920);border-radius:var(--radius-lg);padding:3rem;color:var(--cream)">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold-light);margin-bottom:2rem">Datos de la Operación Simulada</h3>
+        <div class="intl-stat">
+          <label>Mercado Destino</label>
+          <div style="font-family:'Playfair Display',serif;font-size:1.3rem">🇩🇪 Alemania (UE)</div>
+        </div>
+        <div class="intl-stat">
+          <label>Incoterm Seleccionado</label>
+          <div style="font-family:'Playfair Display',serif;font-size:1.3rem">DDP — Incoterms 2020</div>
+        </div>
+        <div class="intl-stat">
+          <label>Courier Logístico</label>
+          <div style="font-family:'Playfair Display',serif;font-size:1.3rem">DHL Express / FedEx</div>
+        </div>
+        <div class="intl-stat">
+          <label>Plazo de Entrega</label>
+          <div style="font-family:'Playfair Display',serif;font-size:1.3rem">4 – 7 días hábiles</div>
+        </div>
+        <div class="intl-stat">
+          <label>Partida Arancelaria (SA)</label>
+          <div style="font-family:'Playfair Display',serif;font-size:1.3rem">2206.00 — Hidromiel</div>
+        </div>
+        <div class="intl-stat">
+          <label>IVA Destino (MwSt)</label>
+          <div style="font-family:'Playfair Display',serif;font-size:1.3rem">19% — Tasa general Alemania</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════
+  BLOG
+═══════════════════════════════════════ -->
+<section id="blog" class="section" style="scroll-margin-top:70px">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem" class="reveal">
+      <span class="section-label">Editorial</span>
+      <h2 class="section-title">Diario Cosecha de Oro</h2>
+      <p class="section-subtitle" style="margin:1rem auto 0;text-align:center">Historias, conocimiento y cultura sobre el vino de miel artesanal y su mundo.</p>
+    </div>
+    <div class="blog-grid" id="blog-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  SOCIAL
+═══════════════════════════════════════ -->
+<section id="social" class="section" style="background:var(--forest)">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label" style="color:var(--gold-light)">Comunidad</span>
+      <h2 class="section-title" style="color:var(--cream)">Sigue Nuestra Historia</h2>
+      <p class="section-subtitle" style="color:rgba(247,243,234,.65);margin:1rem auto 0;text-align:center">Contenidos audiovisuales del proceso artesanal, la miel boliviana y la experiencia gourmet.</p>
+    </div>
+    <div class="social-grid">
+      <!-- ENLACE PENDIENTE: reemplazar # con URL real de Instagram -->
+      <a href="#" class="social-card reveal" data-delay="1" aria-label="Instagram de Cosecha de Oro">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <span>Instagram</span>
+      </a>
+      <!-- ENLACE PENDIENTE: reemplazar # con URL real de TikTok -->
+      <a href="#" class="social-card reveal" data-delay="2" aria-label="TikTok de Cosecha de Oro">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        <span>TikTok</span>
+      </a>
+      <!-- ENLACE PENDIENTE: reemplazar # con URL real de Facebook -->
+      <a href="#" class="social-card reveal" data-delay="3" aria-label="Facebook de Cosecha de Oro">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <span>Facebook</span>
+      </a>
+    </div>
+    <p class="social-note reveal">Los enlaces a redes sociales están pendientes de configuración. <em>RED SOCIAL POR CONFIGURAR</em></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  CONTACT
+═══════════════════════════════════════ -->
+<section id="contacto" class="section section-alt" style="scroll-margin-top:70px">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal-left">
+        <span class="section-label">Contacto</span>
+        <h2 class="section-title">Hablemos</h2>
+        <div class="contact-info">
+          <p>¿Tienes preguntas sobre el proyecto, el producto o la experiencia de marca? Déjanos un mensaje y lo gestionaremos a la brevedad.</p>
+          <div class="contact-placeholder">
+            <div class="cp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div>
+              <div class="cp-label">Correo Electrónico</div>
+              <div class="cp-value">DATO POR COMPLETAR</div>
+            </div>
+          </div>
+          <div class="contact-placeholder">
+            <div class="cp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <div class="cp-label">Ubicación</div>
+              <div class="cp-value">Bolivia · DATO POR COMPLETAR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Nombre *</label>
+              <input type="text" id="f-name" name="name" placeholder="Tu nombre completo" required aria-required="true">
+              <span class="form-error" id="err-name">Por favor ingresa tu nombre.</span>
+            </div>
+            <div class="form-group">
+              <label for="f-email">Correo *</label>
+              <input type="email" id="f-email" name="email" placeholder="tu@correo.com" required aria-required="true">
+              <span class="form-error" id="err-email">Ingresa un correo electrónico válido.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-subject">Asunto *</label>
+            <input type="text" id="f-subject" name="subject" placeholder="¿Sobre qué nos escribes?" required aria-required="true">
+            <span class="form-error" id="err-subject">Por favor indica el asunto.</span>
+          </div>
+          <div class="form-group">
+            <label for="f-message">Mensaje *</label>
+            <textarea id="f-message" name="message" placeholder="Escribe tu mensaje aquí..." required aria-required="true"></textarea>
+            <span class="form-error" id="err-message">Por favor escribe tu mensaje.</span>
+          </div>
+          <div class="form-success" id="form-success">
+            ✓ Mensaje preparado correctamente. Nos pondremos en contacto a la brevedad.
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">ENVIAR MENSAJE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  FAQ
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label">Preguntas</span>
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+    </div>
+    <div class="faq-list reveal" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  TERMS
+═══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem" class="reveal">
+      <span class="section-label">Legal</span>
+      <h2 class="section-title">Términos e Información</h2>
+      <p class="section-subtitle" style="margin:1rem auto 0;text-align:center;font-style:italic;font-size:.9rem">Texto informativo para el prototipo. No constituye asesoría legal.</p>
+    </div>
+    <div class="terms-grid reveal">
+      <div class="terms-block">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Información General</h3>
+        <p>Este sitio es un prototipo académico que presenta información sobre la marca Cosecha de Oro S.R.L. y su producto de vino de miel artesanal. Los precios y datos económicos son referenciales y forman parte de una simulación académica.</p>
+      </div>
+      <div class="terms-block">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Uso del Sitio</h3>
+        <p>El contenido de este sitio es de carácter informativo y educativo. No implementa procesamiento de pagos, cobro con tarjeta ni checkout comercial real. La "Lista de Interés" es exclusivamente una herramienta informativa.</p>
+      </div>
+      <div class="terms-block">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Propiedad Intelectual</h3>
+        <p>Las imágenes, el logotipo, el nombre "Cosecha de Oro" y los materiales visuales son propiedad de sus respectivos titulares. El uso académico de los materiales no implica cesión de derechos.</p>
+      </div>
+      <div class="terms-block">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Información del Producto</h3>
+        <p>Las características del producto, el proceso de elaboración y los datos técnicos se basan en el informe académico de Cosecha de Oro S.R.L. La información de precio es referencial y no constituye oferta comercial.</p>
+      </div>
+      <div class="terms-block">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Privacidad y Cookies</h3>
+        <p>Este sitio utiliza localStorage para guardar la lista de interés y la preferencia de tema visual. No se recopilan ni transmiten datos personales a servidores externos. El formulario de contacto no envía datos a ningún servidor.</p>
+      </div>
+      <div class="terms-block">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Edad Legal</h3>
+        <p>Este sitio presenta información sobre una bebida alcohólica artesanal. El contenido está dirigido exclusivamente a personas mayores de edad según la legislación aplicable en su país de residencia. El acceso implica la confirmación de esta condición.</p>
+      </div>
+      <div class="terms-block">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Información Académica</h3>
+        <p>Los datos económicos (costos, precios, tipos de cambio) forman parte de una simulación académica con valores referenciales al 29/09/2026. No constituyen cotizaciones vinculantes ni precios comerciales definitivos.</p>
+      </div>
+      <div class="terms-block">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Limitaciones</h3>
+        <p>Este sitio no procesa pagos, no genera pedidos reales, no distribuye alcohol y no constituye una tienda comercial operativa. Es un prototipo académico de experiencia digital de marca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+  FOOTER
+═══════════════════════════════════════ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg width="50" height="50" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <circle cx="50" cy="50" r="45" stroke="#C6A15B" stroke-width="2"/>
+          <path d="M30 55 Q50 25 70 55 Q50 75 30 55Z" fill="#C6A15B" opacity=".85"/>
+          <circle cx="50" cy="50" r="4" fill="#DCC98F"/>
+          <text x="50" y="82" text-anchor="middle" fill="#DCC98F" font-size="7" font-family="serif" letter-spacing="2">ORO</text>
+        </svg>
+        <h3>Cosecha de Oro</h3>
+        <p>Vino de Miel Artesanal elaborado con miel multifloral de los bosques de neblina de Ayopaya, Cochabamba, Bolivia. Con proyección al mercado europeo.</p>
+        <div class="footer-social">
+          <!-- ENLACE PENDIENTE -->
+          <a href="#" class="fs-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="fs-icon" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+          <a href="#" class="fs-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#historia">Historia</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>El Producto</h4>
+        <ul>
+          <li><a href="#producto">Vino de Miel</a></li>
+          <li><a href="#experiencia">Cata</a></li>
+          <li><a href="#historia">Proceso</a></li>
+          <li><a href="#academic">Simulación</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#social">Redes Sociales</a></li>
+          <li><a href="#faq">Preguntas Frecuentes</a></li>
+          <li><a href="#terms">Términos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Cosecha de Oro S.R.L. · Prototipo académico</div>
+      <div class="footer-legal">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="#" onclick="document.getElementById('age-gate').style.display='flex';return false">Aviso de Edad</a>
+      </div>
+    </div>
+    <p class="footer-age">Sitio informativo sobre bebida alcohólica artesanal. Solo para mayores de edad según la legislación de su país.</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════
+  INTEREST PANEL
+═══════════════════════════════════════ -->
+<div id="panel-overlay" aria-hidden="true"></div>
+<aside id="interest-panel" role="complementary" aria-label="Lista de interés">
+  <div class="panel-header">
+    <h2>Lista de Interés</h2>
+    <button class="panel-close" id="close-panel" aria-label="Cerrar lista de interés">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="panel-note"><p>Lista de Interés · Solo informativa · No es una compra real</p></div>
+  <div class="panel-items" id="panel-items"></div>
+  <div class="panel-footer">
+    <div class="panel-subtotal">
+      <span>Subtotal informativo:</span>
+      <strong id="panel-subtotal">€0,00</strong>
+    </div>
+    <div class="panel-actions">
+      <button class="btn btn-outline btn-sm" onclick="closeInterestPanel()">SEGUIR EXPLORANDO</button>
+      <button class="btn btn-dark btn-sm" onclick="shareList()">COMPARTIR LISTA</button>
+    </div>
+    <div class="panel-clear"><button onclick="clearList()">Vaciar lista</button></div>
+  </div>
+</aside>
+
+<!-- ═══════════════════════════════════════
+  PRODUCT MODAL
+═══════════════════════════════════════ -->
+<div id="product-modal" role="dialog" aria-modal="true" aria-label="Detalles del producto">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeProductModal()" aria-label="Cerrar">✕</button>
+    <div class="pm-grid">
+      <div class="pm-image">
+        <img id="modal-img" src="" alt="" loading="lazy">
+      </div>
+      <div class="pm-body">
+        <div class="pm-cat" id="modal-cat"></div>
+        <h2 class="pm-name" id="modal-name"></h2>
+        <div class="pm-vol" id="modal-vol"></div>
+        <div class="pm-price-wrap">
+          <div class="pm-price-main" id="modal-price"></div>
+          <div class="pm-price-note">Precio de referencia del proyecto · No constituye transacción comercial real</div>
+        </div>
+        <p class="pm-desc" id="modal-desc"></p>
+        <div class="pm-features" id="modal-features"></div>
+        <div class="pm-qty-row">
+          <div class="qty-ctrl">
+            <button onclick="changeModalQty(-1)" aria-label="Disminuir cantidad">−</button>
+            <span id="modal-qty">1</span>
+            <button onclick="changeModalQty(1)" aria-label="Aumentar cantidad">+</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center" id="modal-add-btn">AÑADIR A LISTA DE INTERÉS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+  BLOG MODAL
+═══════════════════════════════════════ -->
+<div id="blog-modal" role="dialog" aria-modal="true" aria-label="Artículo del blog">
+  <div class="modal-box blog-modal-box">
+    <button class="modal-close" onclick="closeBlogModal()" aria-label="Cerrar">✕</button>
+    <img id="bm-img" src="" alt="" class="bm-image" loading="lazy">
+    <div class="bm-body">
+      <div class="bm-cat" id="bm-cat"></div>
+      <h2 class="bm-title" id="bm-title"></h2>
+      <div class="bm-text" id="bm-text"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ═══════════════════════════════════════
+  TOAST CONTAINER
+═══════════════════════════════════════ -->
+<div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<!-- ═══════════════════════════════════════
+  FAB BUTTONS
+═══════════════════════════════════════ -->
+<div id="fab-wrap">
+  <button class="fab" id="fab-interest" onclick="openInterestPanel()" aria-label="Abrir lista de interés" title="Lista de interés">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+  </button>
+  <button class="fab" id="fab-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba" title="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+</div>
+
+<script>
+/* ═══════════════════════════════════════
+  DATA
+═══════════════════════════════════════ */
+const products = [
+  {
+    id: 1,
+    name: 'Vino Miel Alquimia Dorada',
+    shortName: 'Alquimia Dorada',
+    ml: '750 ml',
+    category: 'hidromiel',
+    categoryLabel: 'Hidromiel · Met',
+    price: '€18,00',
+    priceNum: 18,
+    description: 'Bebida fermentada artesanal obtenida de la fermentación controlada de miel multifloral de los bosques de neblina de Ayopaya, Cochabamba, Bolivia. 12% de alcohol.',
+    shortDesc: 'Hidromiel artesanal de miel multifloral boliviana, fermentación controlada, 750 ml, 12% alcohol.',
+    image: 'vino%20alquimia%20dorada.jpeg',
+    imageAlt: 'Vino Miel Alquimia Dorada 750ml',
+    features: [
+      'Miel pura multifloral de Ayopaya, Cochabamba',
+      'Levaduras enológicas profesionales',
+      'Botella de vidrio cónico premium',
+      '12% de alcohol'
+    ],
+    tags: ['Artesanal', 'Miel Multifloral', 'Bolivia', 'Gourmet', 'OP-001'],
+  },
+  {
+    id: 2,
+    name: 'Vino Alma Dorada',
+    shortName: 'Alma Dorada',
+    ml: '750 ml',
+    category: 'hidromiel',
+    categoryLabel: 'Hidromiel · Met',
+    price: '€20,00',
+    priceNum: 20,
+    description: 'Alma Dorada es una selección premium elaborada con mieles de primavera temprana, ofreciendo notas florales más ligeras y frescas. Reposa durante 6 meses en botella antes de salir al mercado. Ideal para quienes buscan un perfil elegante, sutil y refrescante. 12% de alcohol.',
+    shortDesc: 'Selección premium de miel de primavera temprana con notas florales frescas. 750 ml, 12% alcohol.',
+    image: 'vino%20alma%20dorada.jpeg',
+    imageAlt: 'Vino Alma Dorada 750ml',
+    features: [
+      'Miel de primavera temprana',
+      '6 meses de reposo en botella',
+      'Notas florales frescas',
+      '12% de alcohol'
+    ],
+    tags: ['Artesanal', 'Bolivia'],
+  },
+  {
+    id: 3,
+    name: 'Vino Cosecha Real',
+    shortName: 'Cosecha Real',
+    ml: '750 ml',
+    category: 'hidromiel',
+    categoryLabel: 'Hidromiel · Met',
+    price: '€19,00',
+    priceNum: 19,
+    description: 'Cosecha Real es nuestra reserva especial, creada con mieles de recolección tardía que otorgan un color ámbar profundo y aromas intensos a frutas maduras y especias. Un hidromiel complejo, estructurado y de gran persistencia en boca. 12% de alcohol.',
+    shortDesc: 'Reserva especial de miel de recolección tardía, profundo y complejo. 750 ml, 12% alcohol.',
+    image: 'vino%20cosecha%20real.jpeg',
+    imageAlt: 'Vino Cosecha Real 750ml',
+    features: [
+      'Miel de recolección tardía',
+      'Aromas a frutas maduras',
+      'Perfil complejo y estructurado',
+      '12% de alcohol'
+    ],
+    tags: ['Premium', 'Bolivia'],
+  },
+  {
+    id: 4,
+    name: 'Vino Dulce Amanecer',
+    shortName: 'Dulce Amanecer',
+    ml: '750 ml',
+    category: 'hidromiel',
+    categoryLabel: 'Hidromiel · Met',
+    price: '€17,00',
+    priceNum: 17,
+    description: 'Dulce Amanecer es un hidromiel joven, vibrante y muy amigable al paladar. Presenta un equilibrio perfecto entre la dulzura natural de la miel y una acidez brillante, lo que lo hace perfecto como aperitivo o para acompañar postres ligeros. 12% de alcohol.',
+    shortDesc: 'Hidromiel joven y vibrante, ideal como aperitivo. 750 ml, 12% alcohol.',
+    image: 'vino%20dulce%20amanecer.jpeg',
+    imageAlt: 'Vino Dulce Amanecer 750ml',
+    features: [
+      'Hidromiel joven y vibrante',
+      'Equilibrio dulce/ácido',
+      'Excelente como aperitivo',
+      '12% de alcohol'
+    ],
+    tags: ['Artesanal', 'Bolivia'],
+  }
+];
+
+const tastingSteps = [
+  {
+    num: '01', tab: 'Observar',
+    title: 'Observar',
+    desc: 'Contempla el color ámbar dorado del vino de miel, resultado de la miel multifloral de Ayopaya. La transparencia del líquido en la botella de vidrio cónico habla por sí sola de la clarificación cuidadosa que recibe cada lote (OP-001: 500 botellas).',
+    img: '4%20vinos.jpeg', imgAlt: 'Observar el vino de miel artesanal',
+  },
+  {
+    num: '02', tab: 'Aromatizar',
+    title: 'Aromatizar',
+    desc: 'Al acercar la copa, los aromas florales de la miel multifloral boliviana emergen con suavidad. Las levaduras enológicas profesionales añaden complejidad al bouquet, con notas fermentadas que recuerdan el origen natural del producto.',
+    img: 'Aromatizar.jpeg', imgAlt: 'Aromatizar el hidromiel',
+  },
+  {
+    num: '03', tab: 'Degustar',
+    title: 'Degustar',
+    desc: 'El primer sorbo revela la dulzura característica de la miel de Ayopaya, equilibrada por la acidez natural de la fermentación controlada. Un perfil organoléptico único que refleja la identidad territorial boliviana en cada gota.',
+    img: 'degustar.jpeg', imgAlt: 'Degustar el vino de miel',
+  },
+  {
+    num: '04', tab: 'Descubrir',
+    title: 'Descubrir',
+    desc: 'Más allá del sabor, descubres una historia: la del maestro fermentador que dedicó 80 horas al proceso, la de los apicultores de Cochabamba, la de una PyME boliviana que apunta al mercado alemán. Cada botella lleva un viaje completo.',
+    img: 'imagen_3.jpeg', imgAlt: 'Descubrir la historia del vino de miel',
+  },
+];
+
+const blogPosts = [
+  {
+    id: 1,
+    cat: 'Historia',
+    title: 'La Historia del Met: Del Néctar Antiguo a Bolivia',
+    summary: 'El hidromiel es una de las bebidas fermentadas más antiguas de la humanidad. Descubre cómo llegó a las manos de Cosecha de Oro.',
+    image: 'imagen_1.jpeg',
+    imageAlt: 'Historia del Met hidromiel',
+    content: `
+      <p>El hidromiel, conocido en alemán como <em>Met</em> o <em>Honigwein</em>, es posiblemente la bebida fermentada más antigua de la humanidad. Elaborado a partir de la fermentación de miel con agua y levaduras, su historia abarca culturas desde el antiguo Egipto hasta los vikingos escandinavos, pasando por la Europa medieval.</p>
+      <h4>El Met en la tradición alemana</h4>
+      <p>Alemania posee una cultura consolidada de consumo de bebidas artesanales. El hidromiel forma parte de su tradición gastronómica, lo que reduce la necesidad de educar al consumidor sobre la categoría y permite concentrar el esfuerzo comercial en el origen, la calidad y la diferenciación del producto boliviano.</p>
+      <h4>Bolivia y el renacimiento artesanal</h4>
+      <p>En Bolivia, la apicultura y la transformación de sus derivados han experimentado un crecimiento notable, permitiendo la elaboración de productos artesanales con identidad territorial diferenciada. Cosecha de Oro S.R.L. se constituye en este contexto para proyectar la riqueza natural boliviana al mundo.</p>
+    `,
+  },
+  {
+    id: 2,
+    cat: 'Producto',
+    title: 'Vino de Miel: Tradición, Ciencia y Artesanía',
+    summary: 'Conoce los elementos que hacen del vino de miel artesanal boliviano un bien de elevado valor agregado.',
+    image: 'imagen_2.jpeg',
+    imageAlt: 'Vino de miel artesanal boliviano',
+    content: `
+      <p>La producción de hidromiel conocida técnicamente como vino de miel representa un bien con elevado valor agregado que combina tradición, biocomponentes naturales y procesos de fermentación controlada. Su clasificación arancelaria internacional es SA 2206.00 (demás bebidas fermentadas).</p>
+      <h4>El producto de Cosecha de Oro</h4>
+      <p>El vino de miel de Cosecha de Oro se elabora con miel pura multifloral de los bosques de neblina de Ayopaya, Cochabamba (250 kg por lote), levaduras enológicas profesionales y procesos de control riguroso. El resultado se embotella en botellas de vidrio cónicas de 750 ml con presentación premium.</p>
+      <h4>Presentación y empaque</h4>
+      <p>Cada botella incluye corcho sintético microgranulado, cápsulas termocontraíbles de lujo y etiquetas de alta gama. El embalaje de exportación usa cajas de cartón corrugado (42 cajas por lote), con empaque 100% reciclable.</p>
+    `,
+  },
+  {
+    id: 3,
+    cat: 'Materia Prima',
+    title: 'La Miel Multifloral de Ayopaya: Tesoro de Bolivia',
+    summary: 'Los bosques de neblina de Cochabamba albergan una apicultura única. Conoce la materia prima que da vida a Cosecha de Oro.',
+    image: 'WhatsApp%20Image%202026-10-04%20at%2013.05.39.jpeg',
+    imageAlt: 'Miel multifloral de Ayopaya Bolivia',
+    content: `
+      <p>La miel utilizada en la elaboración del vino de miel de Cosecha de Oro proviene de los bosques de neblina de Ayopaya, Cochabamba, Bolivia. Esta región ofrece una diversidad floral única que se traduce en una miel multifloral de características excepcionales.</p>
+      <h4>El precio de referencia de la miel</h4>
+      <p>Como referencia actual se toma la oferta de miel multifloral de Ayopaya: Bs 60,00 por kilogramo en compras por volumen (desde 6 unidades). Para el lote OP-001 de 250 kg, el costo de la miel representa el 57,78% del costo total de producción.</p>
+      <h4>Identidad territorial</h4>
+      <p>La miel de Ayopaya no es solo un insumo: es la identidad del producto. Su origen verificado y su vínculo con la apicultura boliviana sostenible son pilares del diferencial comercial de Cosecha de Oro en el mercado europeo.</p>
+    `,
+  },
+  {
+    id: 4,
+    cat: 'Proceso',
+    title: 'Fermentación Controlada: El Corazón del Met',
+    summary: 'El proceso fermentativo es donde la miel se transforma en arte. Descubre cómo se elabora cada lote de Cosecha de Oro.',
+    image: 'WhatsApp%20Image%202026-10-04%20at%2013.05.40.jpeg',
+    imageAlt: 'Proceso de fermentación del hidromiel',
+    content: `
+      <p>El corazón del vino de miel de Cosecha de Oro es su proceso de fermentación controlada. Bajo la supervisión del Maestro Fermentador (80 horas dedicadas por lote), la miel multifloral de Ayopaya se combina con agua purificada y levaduras enológicas profesionales.</p>
+      <h4>Las etapas del proceso (OP-001)</h4>
+      <p>El proceso inicia el 01/10/2026 y concluye el 15/10/2026. Las etapas incluyen: preparación e higienización de equipos (agua purificada e insumos de sanitización: Bs 556,80), fermentación activa, clarificación y control microbiológico por lote, embotellado en 500 botellas y etiquetado final.</p>
+      <h4>Costos indirectos del proceso</h4>
+      <p>La depreciación de tanques y equipos representa Bs 835,20 del lote. Los servicios públicos (energía eléctrica, gas industrial) aportan Bs 522,00. Todo controlado bajo el Sistema de Costos por Órdenes de Producción.</p>
+    `,
+  },
+  {
+    id: 5,
+    cat: 'Guía',
+    title: 'Guía de Cata del Vino de Miel Artesanal',
+    summary: 'Una experiencia sensorial completa: cómo observar, aromatizar, degustar y descubrir el hidromiel boliviano.',
+    image: 'WhatsApp%20Image%202026-10-04%20at%2013.05.40%20(3).jpeg',
+    imageAlt: 'Guía de cata vino de miel',
+    content: `
+      <p>La cata del vino de miel de Cosecha de Oro es una experiencia que involucra los cuatro sentidos principales: la vista, el olfato, el gusto y la mente. Aquí te presentamos una guía básica para disfrutar al máximo esta bebida artesanal boliviana.</p>
+      <h4>1. Observar</h4>
+      <p>Contempla el color ámbar dorado característico de la miel multifloral de Ayopaya. La transparencia del líquido habla de la clarificación cuidadosa que recibe cada lote.</p>
+      <h4>2. Aromatizar</h4>
+      <p>Al acercar la copa, emergen los aromas florales naturales de la miel boliviana, enriquecidos por las notas fermentadas de las levaduras enológicas profesionales.</p>
+      <h4>3. Degustar</h4>
+      <p>El perfil organoléptico equilibra la dulzura natural de la miel con la acidez de la fermentación. Un producto de nicho (<em>craft beverage</em>) para paladares exigentes.</p>
+      <h4>4. Descubrir</h4>
+      <p>Más allá del sabor, el vino de miel de Cosecha de Oro lleva consigo la historia de los bosques de neblina de Cochabamba y la visión de una PyME boliviana con proyección internacional.</p>
+    `,
+  },
+  {
+    id: 6,
+    cat: 'Maridaje',
+    title: 'Maridaje: Vino de Miel con Quesos y Carnes',
+    summary: 'Sugerencias editoriales para armonizar el hidromiel artesanal boliviano con gastronomía de alta calidad.',
+    image: 'imagen_3.jpeg',
+    imageAlt: 'Maridaje vino de miel con quesos y carnes',
+    content: `
+      <p><em>Contenido editorial basado en las características del hidromiel artesanal.</em></p>
+      <h4>Con quesos maduros</h4>
+      <p>La dulzura natural del hidromiel complementa la intensidad y salinidad de los quesos curados y maduros. La combinación crea un equilibrio gourmet donde ninguno de los dos elementos opaca al otro.</p>
+      <h4>Con carnes asadas</h4>
+      <p>Las notas fermentadas del Met maridan elegantemente con cortes de carne a la parrilla. La acidez natural del vino de miel actúa como contrapunto a la grasa y potencia los sabores del asado.</p>
+      <h4>Gastronomía gourmet y momentos especiales</h4>
+      <p>El vino de miel artesanal de Cosecha de Oro es el acompañante ideal para experiencias culinarias de alto nivel y el regalo gourmet diferenciado para celebraciones únicas. Pensado para el consumidor alemán que valora el origen, la historia y la sostenibilidad.</p>
+    `,
+  },
+  {
+    id: 7,
+    cat: 'Internacionalización',
+    title: 'Proyección Internacional: Bolivia hacia Alemania',
+    summary: 'Cómo Cosecha de Oro plantea llegar al mercado alemán con una estrategia de exportación e-commerce B2C.',
+    image: 'WhatsApp%20Image%202026-10-04%20at%2013.05.40%20(4).jpeg',
+    imageAlt: 'Proyección internacional Bolivia Alemania',
+    content: `
+      <p>El proyecto de Cosecha de Oro S.R.L. demuestra la viabilidad técnica, comercial y contable del modelo de Exportación E-Commerce B2C para el vino de miel, con destino al mercado alemán.</p>
+      <h4>El modelo e-commerce B2C transfronterizo</h4>
+      <p>La estrategia elimina los intermediarios tradicionales: el cliente final en Alemania adquiere directamente desde la tienda virtual. La logística se realiza via DHL Express / FedEx bajo régimen de exportación definitiva por mensajería internacional (Incoterm DDP).</p>
+      <h4>Datos clave de la simulación</h4>
+      <p>Margen bruto sobre el costo de producción: 78,9%. Plazo de entrega: 4 a 7 días hábiles. Partida arancelaria: SA 2206.00. IVA en Alemania: 19% (MwSt). Tipo de cambio referencial (28/09/2026): Bs 12,05/USD; 1 EUR = Bs 13,66.</p>
+      <h4>El potencial</h4>
+      <p>Las 500 botellas del lote OP-001, a €18,00 cada una, generarían un ingreso bruto potencial de €9.000 (aprox. Bs 122.982). El costo de producción representa el 21,1% de ese ingreso bruto, dejando margen para cubrir costos logísticos, comerciales y tributarios.</p>
+    `,
+  },
+];
+
+const faqData = [
+  { q: '¿Qué es el vino de miel?', a: 'Es una bebida fermentada artesanal obtenida de la fermentación controlada de miel multifloral boliviana con levaduras enológicas y agua purificada. Conocida técnicamente como hidromiel o Met (en alemán, Met o Honigwein), es una de las bebidas fermentadas más antiguas de la humanidad.' },
+  { q: '¿Qué presentación tiene el producto?', a: 'El vino de miel de Cosecha de Oro se presenta en botella de vidrio cónico de 750 ml, con corcho sintético microgranulado, cápsula termocontraíble de lujo y etiquetas y contraetiquetas de alta gama.' },
+  { q: '¿Cuál es el origen del producto?', a: 'La miel proviene de los bosques de neblina de Ayopaya, Cochabamba, Bolivia. Se trata de miel pura multifloral de apicultura boliviana sostenible, adquirida a precio de volumen (Bs 60,00/kg). La empresa es Cosecha de Oro S.R.L., constituida en Bolivia.' },
+  { q: '¿Cómo se elabora el vino de miel?', a: 'Mediante fermentación controlada de miel multifloral con levaduras enológicas profesionales y agua purificada. El proceso incluye: selección de materia prima, higienización de equipos, fermentación (supervisada por el Maestro Fermentador, 80 horas/lote), clarificación y control microbiológico, embotellado y etiquetado artesanal, y embalaje de exportación.' },
+  { q: '¿Cómo se conserva el vino de miel?', a: 'Se recomienda conservar en lugar fresco y seco, alejado de la luz solar directa y de fuentes de calor. Una vez abierta la botella, conservar en refrigeración y consumir en un plazo prudente para preservar sus características organolépticas.' },
+  { q: '¿Qué tipo de experiencia ofrece?', a: 'Una experiencia gourmet única que combina la tradición del hidromiel con el origen boliviano. Ideal para momentos especiales, maridaje con quesos maduros y carnes, y como regalo diferenciado para consumidores exigentes que valoran el origen, la historia y la sostenibilidad.' },
+  { q: '¿Dónde se proyecta comercialmente?', a: 'El proyecto plantea una estrategia de exportación e-commerce B2C hacia el mercado alemán (Berlín, Múnich, Fráncfort), con entregas puerta a puerta vía courier aéreo expreso (DHL Express / FedEx) en 4 a 7 días hábiles, bajo el Incoterm DDP (Delivered Duty Paid).' },
+  { q: '¿Qué significa DDP?', a: 'DDP son las siglas de "Delivered Duty Paid" (Incoterms 2020). Bajo esta regla, Cosecha de Oro asume todos los costos y riesgos del transporte hasta el domicilio del comprador en Alemania. Los trámites y tributos de importación corresponden al comprador (salvo lo que la tienda decida prepagar como servicio).' },
+  { q: '¿Qué es el proceso de exportación descrito en el proyecto?', a: 'Incluye: certificación sanitaria SENASAG (plataforma Gran Paitití), emisión de factura comercial y lista de empaque, generación de Air Waybill (AWB) por el courier, y despacho bajo régimen de exportación definitiva por mensajería internacional. En destino: declaración aduanera ordinaria, IVA de importación (19% MwSt) e impuestos especiales según el TARIC para la partida SA 2206.00.' },
+];
+
+/* ═══════════════════════════════════════
+  STATE
+═══════════════════════════════════════ */
+let interestList = [];
+let currentProductModal = null;
+let modalQty = 1;
+let currentLightboxIndex = 0;
+let activeFilter = 'all';
+let searchQuery = '';
+
+/* ═══════════════════════════════════════
+  INIT
+═══════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  initAgeGate();
+  initTheme();
+  initNavbar();
+  initMobileMenu();
+  initSearch();
+  initHero();
+  renderProducts(products);
+  renderBlog();
+  
+  renderFAQ();
+  initFilters();
+  initScrollAnimations();
+  initParallax();
+  initVideoObserver();
+  initTasting();
+  initContact();
+  initFAQ();
+  loadListFromStorage();
+  updateListCounter();
+  initSplashParticles();
+  initAgeGateParticles();
+});
+
+/* ═══════════════════════════════════════
+  AGE GATE
+═══════════════════════════════════════ */
+function initAgeGate() {
+  const gate = document.getElementById('age-gate');
+  const btn = document.getElementById('age-confirm');
+  if (localStorage.getItem('co_age_confirmed') === 'yes') {
+    gate.style.display = 'none';
+    showSplash();
+    return;
+  }
+  gate.style.display = 'flex';
+  btn.addEventListener('click', () => {
+    localStorage.setItem('co_age_confirmed', 'yes');
+    gate.style.opacity = '0';
+    gate.style.transition = 'opacity .6s ease';
+    setTimeout(() => { gate.style.display = 'none'; showSplash(); }, 600);
+  });
+}
+
+function initAgeGateParticles() {
+  const container = document.querySelector('.ag-particles');
+  if (!container) return;
+  for (let i = 0; i < 20; i++) {
+    const span = document.createElement('span');
+    span.style.setProperty('--dur', `${6 + Math.random() * 8}s`);
+    span.style.setProperty('--delay', `${Math.random() * 6}s`);
+    span.style.left = `${Math.random() * 100}%`;
+    container.appendChild(span);
+  }
+}
+
+/* ═══════════════════════════════════════
+  SPLASH
+═══════════════════════════════════════ */
+function showSplash() {
+  const splash = document.getElementById('splash');
+  splash.classList.add('active');
+  setTimeout(() => {
+    splash.style.transition = 'opacity .8s ease';
+    splash.style.opacity = '0';
+    setTimeout(() => { splash.style.display = 'none'; splash.classList.remove('active'); }, 800);
+  }, 2200);
+}
+
+function initSplashParticles() {
+  const container = document.querySelector('.splash-particles');
+  if (!container) return;
+  for (let i = 0; i < 18; i++) {
+    const span = document.createElement('span');
+    span.style.setProperty('--dur', `${4 + Math.random() * 5}s`);
+    span.style.setProperty('--delay', `${Math.random() * 4}s`);
+    span.style.setProperty('--dx', `${(Math.random() - 0.5) * 80}px`);
+    span.style.setProperty('--dx2', `${(Math.random() - 0.5) * 120}px`);
+    span.style.left = `${Math.random() * 100}%`;
+    span.style.bottom = '10%';
+    container.appendChild(span);
+  }
+}
+
+/* ═══════════════════════════════════════
+  THEME
+═══════════════════════════════════════ */
+function initTheme() {
+  const saved = localStorage.getItem('co_theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+  updateThemeIcon(saved);
+  document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+  const mmTheme = document.getElementById('mm-theme');
+  if (mmTheme) mmTheme.addEventListener('click', toggleTheme);
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('co_theme', next);
+  updateThemeIcon(next);
+  showToast(next === 'dark' ? '🌙 Modo oscuro activado' : '☀ Modo claro activado', 'gold');
+}
+
+function updateThemeIcon(theme) {
+  const icon = document.getElementById('theme-icon');
+  const mmBtn = document.getElementById('mm-theme');
+  if (!icon) return;
+  if (theme === 'dark') {
+    icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+    if (mmBtn) mmBtn.textContent = '☀';
+  } else {
+    icon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
+    if (mmBtn) mmBtn.textContent = '🌙';
+  }
+}
+
+/* ═══════════════════════════════════════
+  NAVBAR
+═══════════════════════════════════════ */
+function initNavbar() {
+  const navbar = document.getElementById('navbar');
+  const fabTop = document.getElementById('fab-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      navbar.classList.add('scrolled');
+      fabTop.classList.add('visible');
+    } else {
+      navbar.classList.remove('scrolled');
+      fabTop.classList.remove('visible');
+    }
+    updateActiveNavLink();
+  });
+}
+
+function updateActiveNavLink() {
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  let current = '';
+  sections.forEach(s => {
+    const top = s.getBoundingClientRect().top;
+    if (top <= 120) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+}
+
+/* ═══════════════════════════════════════
+  MOBILE MENU
+═══════════════════════════════════════ */
+function initMobileMenu() {
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  const links = menu.querySelectorAll('.mm-link');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = menu.classList.contains('open');
+    if (isOpen) { menu.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); }
+    else { menu.classList.add('open'); hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); }
+  });
+
+  hamburger.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hamburger.click(); } });
+
+  links.forEach(a => {
+    a.addEventListener('click', () => { menu.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); });
+  });
+}
+
+/* ═══════════════════════════════════════
+  SEARCH
+═══════════════════════════════════════ */
+function initSearch() {
+  const panel = document.getElementById('search-panel');
+  const input = document.getElementById('search-input');
+  const clear = document.getElementById('search-clear');
+  const results = document.getElementById('search-results');
+
+  document.getElementById('open-search').addEventListener('click', () => {
+    panel.classList.add('open');
+    setTimeout(() => input.focus(), 300);
+  });
+  document.getElementById('close-search').addEventListener('click', () => {
+    panel.classList.remove('open');
+    input.value = '';
+    clear.style.display = 'none';
+    results.innerHTML = '';
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      panel.classList.remove('open');
+      document.getElementById('product-modal').classList.remove('open');
+      document.getElementById('blog-modal').classList.remove('open');
+      document.getElementById('lightbox').classList.remove('open');
+    }
+  });
+  clear.addEventListener('click', () => { input.value = ''; clear.style.display = 'none'; results.innerHTML = ''; input.focus(); });
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+    clear.style.display = q ? 'block' : 'none';
+    if (q.length >= 1) showSearchResults(q);
+    else results.innerHTML = '';
+  });
+}
+
+function showSearchResults(q) {
+  const results = document.getElementById('search-results');
+  const lower = q.toLowerCase();
+  const matched = products.filter(p =>
+    p.name.toLowerCase().includes(lower) ||
+    p.description.toLowerCase().includes(lower) ||
+    p.categoryLabel.toLowerCase().includes(lower) ||
+    p.tags.some(t => t.toLowerCase().includes(lower)) ||
+    p.ml.toLowerCase().includes(lower)
+  );
+  if (matched.length === 0) {
+    results.innerHTML = `<div class="search-count">0 resultados para "${q}"</div><div class="search-no-results">🍯<br>Sin resultados para tu búsqueda.<br>Prueba con "miel", "hidromiel" o "750 ml".</div>`;
+    return;
+  }
+  results.innerHTML = `<div class="search-count">${matched.length} resultado${matched.length>1?'s':''} para "${q}"</div>`;
+  const grid = document.createElement('div');
+  grid.style.cssText = 'display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:1rem';
+  matched.forEach(p => {
+    const card = document.createElement('div');
+    card.style.cssText = 'border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:.3s';
+    card.innerHTML = `<img src="${p.image}" alt="${p.imageAlt}" style="width:100%;height:120px;object-fit:cover" loading="lazy"><div style="padding:.8rem"><div style="font-size:.75rem;color:var(--gold);margin-bottom:.2rem">${p.categoryLabel}</div><div style="font-size:.9rem;font-weight:600">${p.name}</div><div style="font-size:.8rem;color:var(--gold);margin-top:.3rem">${p.price}</div></div>`;
+    card.addEventListener('click', () => { openProductModal(p); document.getElementById('search-panel').classList.remove('open'); });
+    grid.appendChild(card);
+  });
+  results.appendChild(grid);
+}
+
+/* ═══════════════════════════════════════
+  HERO
+═══════════════════════════════════════ */
+function initHero() {
+  const img = document.getElementById('hero-img');
+  if (img) {
+    setTimeout(() => { img.style.transform = 'scale(1.02)'; }, 100);
+  }
+  const heroParticles = document.querySelector('.hero-particles');
+  if (heroParticles) {
+    for (let i = 0; i < 14; i++) {
+      const span = document.createElement('span');
+      span.style.setProperty('--dur', `${10 + Math.random() * 8}s`);
+      span.style.setProperty('--delay', `${Math.random() * 10}s`);
+      span.style.left = `${Math.random() * 100}%`;
+      heroParticles.appendChild(span);
+    }
+  }
+}
+
+/* ═══════════════════════════════════════
+  PRODUCTS
+═══════════════════════════════════════ */
+function renderProducts(list) {
+  const grid = document.getElementById('products-grid');
+  if (!grid) return;
+  if (list.length === 0) {
+    grid.innerHTML = `<div class="catalog-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><p style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.5rem">Sin resultados</p><p style="font-size:.9rem">No encontramos productos con ese filtro.</p></div>`;
+    return;
+  }
+  grid.innerHTML = list.map((p, i) => `
+    <article class="product-card reveal" data-delay="${(i%3)+1}" data-category="${p.category}">
+      <div class="pc-image">
+        <img src="${p.image}" alt="${p.imageAlt}" loading="lazy">
+        <span class="pc-cat">${p.categoryLabel}</span>
+        <div class="pc-overlay">
+          <button class="btn btn-sm" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.4)" onclick="openProductModal(products[${i}])" aria-label="Ver detalles de ${p.name}">Detalles</button>
+          <button class="btn btn-sm btn-primary" onclick="addToList(${p.id})" aria-label="Añadir ${p.name} a lista">+ Lista</button>
+        </div>
+      </div>
+      <div class="pc-body">
+        <h3 class="pc-name">${p.name}</h3>
+        <div class="pc-ml">${p.ml}</div>
+        <p class="pc-desc">${p.shortDesc}</p>
+        <div class="pc-footer">
+          <div class="pc-price">${p.price}<small>Precio referencial</small></div>
+          <div style="display:flex;gap:.5rem">
+            <button class="btn btn-sm btn-outline" onclick="openProductModal(products[${i}])" aria-label="Ver detalles">Ver</button>
+            <button class="btn btn-sm btn-primary" onclick="addToList(${p.id})" aria-label="Añadir a lista">♥</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  `).join('');
+  initScrollAnimations();
+}
+
+/* ═══════════════════════════════════════
+  FILTERS
+═══════════════════════════════════════ */
+function initFilters() {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      filterProducts();
+    });
+  });
+}
+
+function filterProducts() {
+  let list = products;
+  if (activeFilter !== 'all') list = products.filter(p => p.category === activeFilter || p.ml.toLowerCase().replace(' ','') === activeFilter);
+  renderProducts(list);
+}
+
+/* ═══════════════════════════════════════
+  PRODUCT MODAL
+═══════════════════════════════════════ */
+function openProductModal(product) {
+  currentProductModal = product;
+  modalQty = 1;
+  document.getElementById('modal-img').src = product.image;
+  document.getElementById('modal-img').alt = product.imageAlt;
+  document.getElementById('modal-cat').textContent = product.categoryLabel;
+  document.getElementById('modal-name').textContent = product.name;
+  document.getElementById('modal-vol').textContent = product.ml;
+  document.getElementById('modal-price').textContent = product.price;
+  document.getElementById('modal-desc').textContent = product.description;
+  document.getElementById('modal-qty').textContent = '1';
+  const featsEl = document.getElementById('modal-features');
+  featsEl.innerHTML = product.features.map(f => `
+    <div class="pm-feature">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+      ${f}
+    </div>
+  `).join('');
+  document.getElementById('modal-add-btn').onclick = () => {
+    addToListWithQty(product.id, modalQty);
+    closeProductModal();
+  };
+  document.getElementById('product-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductModal() {
+  document.getElementById('product-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function changeModalQty(delta) {
+  modalQty = Math.max(1, Math.min(10, modalQty + delta));
+  document.getElementById('modal-qty').textContent = modalQty;
+}
+
+document.getElementById('product-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('product-modal')) closeProductModal();
+});
+
+/* ═══════════════════════════════════════
+  INTEREST LIST
+═══════════════════════════════════════ */
+function addToList(productId) {
+  addToListWithQty(productId, 1);
+}
+
+function addToListWithQty(productId, qty) {
+  const product = products.find(p => p.id === productId);
+  if (!product) return;
+  const existing = interestList.find(i => i.id === productId);
+  if (existing) {
+    existing.qty = Math.min(10, existing.qty + qty);
+  } else {
+    interestList.push({ ...product, qty });
+  }
+  saveListToStorage();
+  updateListCounter();
+  renderInterestPanel();
+  showToast(`♥ "${product.shortName}" añadido a tu lista de interés.`, 'gold');
+}
+
+function removeFromList(productId) {
+  interestList = interestList.filter(i => i.id !== productId);
+  saveListToStorage();
+  updateListCounter();
+  renderInterestPanel();
+  showToast('Producto eliminado de la lista.', '');
+}
+
+function updateQuantity(productId, delta) {
+  const item = interestList.find(i => i.id === productId);
+  if (!item) return;
+  item.qty = Math.max(1, Math.min(10, item.qty + delta));
+  saveListToStorage();
+  updateListCounter();
+  renderInterestPanel();
+  updateSubtotal();
+}
+
+function updateListCounter() {
+  const total = interestList.reduce((sum, i) => sum + i.qty, 0);
+  const badge = document.getElementById('list-counter');
+  if (total > 0) {
+    badge.style.display = 'flex';
+    badge.textContent = total;
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+function updateSubtotal() {
+  const total = interestList.reduce((sum, i) => sum + (i.priceNum * i.qty), 0);
+  const el = document.getElementById('panel-subtotal');
+  if (el) el.textContent = `€${total.toFixed(2).replace('.',',')}`;
+}
+
+function renderInterestPanel() {
+  const container = document.getElementById('panel-items');
+  if (!container) return;
+  if (interestList.length === 0) {
+    container.innerHTML = `<div class="panel-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><p style="font-size:.9rem">Tu lista de interés está vacía.</p></div>`;
+    updateSubtotal();
+    return;
+  }
+  container.innerHTML = interestList.map(item => `
+    <div class="panel-item">
+      <img src="${item.image}" alt="${item.imageAlt}" class="pi-img" loading="lazy">
+      <div>
+        <div class="pi-name">${item.shortName}</div>
+        <div class="pi-price">${item.price} <span class="pi-note">por unidad</span></div>
+        <div class="pi-qty">
+          <button class="pi-qty-btn" onclick="updateQuantity(${item.id},-1)" aria-label="Disminuir">−</button>
+          <span>${item.qty}</span>
+          <button class="pi-qty-btn" onclick="updateQuantity(${item.id},1)" aria-label="Aumentar">+</button>
+        </div>
+      </div>
+      <button class="pi-delete" onclick="removeFromList(${item.id})" aria-label="Eliminar ${item.name}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3,6 5,6 21,6"/><path d="M19,6l-1,14a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2L5,6"/></svg>
+      </button>
+    </div>
+  `).join('');
+  updateSubtotal();
+}
+
+function clearList() {
+  if (interestList.length === 0) return;
+  interestList = [];
+  saveListToStorage();
+  updateListCounter();
+  renderInterestPanel();
+  showToast('Lista vaciada.', '');
+}
+
+function openInterestPanel() {
+  document.getElementById('interest-panel').classList.add('open');
+  document.getElementById('panel-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  renderInterestPanel();
+}
+
+function closeInterestPanel() {
+  document.getElementById('interest-panel').classList.remove('open');
+  document.getElementById('panel-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function shareList() {
+  const text = interestList.length === 0
+    ? 'Mi lista de interés en Cosecha de Oro está vacía aún. 🍯'
+    : 'Mi lista de interés en Cosecha de Oro:\n' + interestList.map(i => `• ${i.name} (${i.ml}) x${i.qty} — ${i.price}`).join('\n') + '\n\nwww.cosechadeoro.com (ENLACE PENDIENTE)';
+  if (navigator.share) {
+    navigator.share({ title: 'Mi Lista — Cosecha de Oro', text }).catch(() => {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => showToast('Lista copiada al portapapeles ✓', 'success'));
+  } else {
+    showToast('Compartir no disponible en este navegador.', '');
+  }
+}
+
+function saveListToStorage() {
+  localStorage.setItem('co_interest_list', JSON.stringify(interestList));
+}
+
+function loadListFromStorage() {
+  try {
+    const saved = localStorage.getItem('co_interest_list');
+    if (saved) interestList = JSON.parse(saved);
+  } catch (e) { interestList = []; }
+}
+
+document.getElementById('open-interest').addEventListener('click', openInterestPanel);
+document.getElementById('close-panel').addEventListener('click', closeInterestPanel);
+document.getElementById('panel-overlay').addEventListener('click', closeInterestPanel);
+
+/* ═══════════════════════════════════════
+  TASTING EXPERIENCE
+═══════════════════════════════════════ */
+function initTasting() {
+  const tabs = document.querySelectorAll('.tasting-tab');
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected','true');
+      const step = tastingSteps[i];
+      const imgEl = document.getElementById('tasting-img');
+      const numEl = document.getElementById('tasting-num');
+      const titleEl = document.getElementById('tasting-title');
+      const descEl = document.getElementById('tasting-desc');
+      [imgEl, numEl, titleEl, descEl].forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(10px)'; });
+      setTimeout(() => {
+        imgEl.src = step.img; imgEl.alt = step.imgAlt;
+        numEl.textContent = step.num;
+        titleEl.textContent = step.title;
+        descEl.textContent = step.desc;
+        [imgEl, numEl, titleEl, descEl].forEach(el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; el.style.transition = 'all .4s ease'; });
+      }, 200);
+    });
+  });
+}
+
+/* ═══════════════════════════════════════
+  GALLERY
+═══════════════════════════════════════ */
+function openLightbox(index) {
+  currentLightboxIndex = index;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function updateLightbox() {
+  const img = galleryImages[currentLightboxIndex];
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb-img').alt = img.alt;
+  document.getElementById('lb-counter').textContent = `${currentLightboxIndex + 1} / ${galleryImages.length}`;
+}
+
+document.getElementById('lb-prev').addEventListener('click', () => {
+  currentLightboxIndex = (currentLightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+  updateLightbox();
+});
+document.getElementById('lb-next').addEventListener('click', () => {
+  currentLightboxIndex = (currentLightboxIndex + 1) % galleryImages.length;
+  updateLightbox();
+});
+document.getElementById('lb-close').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === document.getElementById('lightbox')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'ArrowLeft') { currentLightboxIndex = (currentLightboxIndex - 1 + galleryImages.length) % galleryImages.length; updateLightbox(); }
+  if (e.key === 'ArrowRight') { currentLightboxIndex = (currentLightboxIndex + 1) % galleryImages.length; updateLightbox(); }
+});
+
+/* ═══════════════════════════════════════
+  VIDEO
+═══════════════════════════════════════ */
+function initVideoObserver() {
+  const video = document.getElementById('brand-video');
+  const overlay = document.getElementById('video-overlay');
+  const playBtn = document.getElementById('play-btn');
+  if (!video) return;
+
+  playBtn.addEventListener('click', () => {
+    video.play();
+    overlay.classList.add('hidden');
+  });
+
+  video.addEventListener('pause', () => { overlay.classList.remove('hidden'); });
+  video.addEventListener('ended', () => { overlay.classList.remove('hidden'); });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (!e.isIntersecting && !video.paused) { video.pause(); } });
+  }, { threshold: 0.3 });
+  obs.observe(video);
+}
+
+/* ═══════════════════════════════════════
+  BLOG
+═══════════════════════════════════════ */
+function renderBlog() {
+  const grid = document.getElementById('blog-grid');
+  if (!grid) return;
+  const imgs = [
+    'imagen_1.jpeg',
+    'imagen_2.jpeg',
+    'WhatsApp%20Image%202026-10-04%20at%2013.05.39.jpeg',
+    'WhatsApp%20Image%202026-10-04%20at%2013.05.40.jpeg',
+    'WhatsApp%20Image%202026-10-04%20at%2013.05.40%20(3).jpeg',
+    'imagen_3.jpeg',
+    'WhatsApp%20Image%202026-10-04%20at%2013.05.40%20(4).jpeg',
+  ];
+  grid.innerHTML = blogPosts.map((post, i) => `
+    <article class="blog-card reveal" data-delay="${(i%3)+1}" onclick="openBlogModal(${i})" tabindex="0" role="button" aria-label="Leer artículo: ${post.title}" onkeydown="if(event.key==='Enter')openBlogModal(${i})">
+      <div class="blog-body">
+        <div class="blog-cat-badge">${post.cat}</div>
+        <h3 class="blog-title">${post.title}</h3>
+        <p class="blog-summary">${post.summary}</p>
+        <div class="blog-read">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </article>
+  `).join('');
+}
+
+function openBlogModal(index) {
+  const post = blogPosts[index];
+  const imgs = [
+    'imagen_1.jpeg','imagen_2.jpeg',
+    'WhatsApp%20Image%202026-10-04%20at%2013.05.39.jpeg',
+    'WhatsApp%20Image%202026-10-04%20at%2013.05.40.jpeg',
+    'WhatsApp%20Image%202026-10-04%20at%2013.05.40%20(3).jpeg',
+    'imagen_3.jpeg',
+    'WhatsApp%20Image%202026-10-04%20at%2013.05.40%20(4).jpeg',
+  ];
+  document.getElementById('bm-img').src = 'imagen_1.jpeg';
+  document.getElementById('bm-img').alt = post.imageAlt;
+  document.getElementById('bm-cat').textContent = post.cat;
+  document.getElementById('bm-title').textContent = post.title;
+  document.getElementById('bm-text').innerHTML = post.content;
+  document.getElementById('blog-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBlogModal() {
+  document.getElementById('blog-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('blog-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('blog-modal')) closeBlogModal();
+});
+
+/* ═══════════════════════════════════════
+  FAQ
+═══════════════════════════════════════ */
+function renderFAQ() {
+  const list = document.getElementById('faq-list');
+  if (!list) return;
+  list.innerHTML = faqData.map((item, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-q" onclick="toggleFAQ(${i})" aria-expanded="false" aria-controls="faq-a-${i}">
+        ${item.q}
+        <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg></span>
+      </button>
+      <div class="faq-a" id="faq-a-${i}" role="region"><p>${item.a}</p></div>
+    </div>
+  `).join('');
+}
+
+function initFAQ() {}
+
+function toggleFAQ(index) {
+  const item = document.getElementById(`faq-${index}`);
+  const btn = item.querySelector('.faq-q');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+  if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+}
+
+/* ═══════════════════════════════════════
+  CONTACT
+═══════════════════════════════════════ */
+function initContact() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+    const name = document.getElementById('f-name');
+    const email = document.getElementById('f-email');
+    const subject = document.getElementById('f-subject');
+    const message = document.getElementById('f-message');
+    ['err-name','err-email','err-subject','err-message'].forEach(id => { document.getElementById(id).style.display = 'none'; });
+    if (!name.value.trim()) { document.getElementById('err-name').style.display = 'block'; valid = false; }
+    if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { document.getElementById('err-email').style.display = 'block'; valid = false; }
+    if (!subject.value.trim()) { document.getElementById('err-subject').style.display = 'block'; valid = false; }
+    if (!message.value.trim()) { document.getElementById('err-message').style.display = 'block'; valid = false; }
+    if (!valid) return;
+    const success = document.getElementById('form-success');
+    success.style.display = 'block';
+    form.reset();
+    showToast('✓ Mensaje preparado correctamente.', 'success');
+    setTimeout(() => { success.style.display = 'none'; }, 5000);
+  });
+}
+
+/* ═══════════════════════════════════════
+  SCROLL ANIMATIONS
+═══════════════════════════════════════ */
+function initScrollAnimations() {
+  const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+  elements.forEach(el => obs.observe(el));
+}
+
+/* ═══════════════════════════════════════
+  PARALLAX
+═══════════════════════════════════════ */
+function initParallax() {
+  const heroImg = document.getElementById('hero-img');
+  if (!heroImg) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < window.innerHeight) {
+      heroImg.style.transform = `scale(1.08) translateY(${y * 0.25}px)`;
+    }
+  }, { passive: true });
+}
+
+/* ═══════════════════════════════════════
+  TOAST
+═══════════════════════════════════════ */
+function showToast(message, type = '') {
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  toast.className = `toast${type ? ' ' + type : ''}`;
+  toast.textContent = message;
+  toast.setAttribute('role', 'status');
+  container.appendChild(toast);
+  setTimeout(() => {
+    toast.classList.add('out');
+    setTimeout(() => { if (container.contains(toast)) container.removeChild(toast); }, 400);
+  }, 3200);
+}
+</script>
+</body>
+</html>
